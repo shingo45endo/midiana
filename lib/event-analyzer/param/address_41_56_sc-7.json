@@ -1,0 +1,55 @@
+{
+	"_idKeys": ["41 56"],
+	"_addrCarries": [false, false, true],
+
+	"_content": {
+		"00 00 00": {
+			"name": "System",
+			"_content": {
+				"00": {"name": "Reverb Character", "table": ["Room 1", "Room 2", "Room 3", "Hall 1", "Hall 2", "Plate", "Delay", "Panning Delay"]},
+				"01": {"name": "Reverb Level"},
+				"02": {"name": "Reverb Time"},
+				"03": {"name": "Delay Time"},
+				"04": {"name": "Delay Feedback"},
+				"05": {"name": "Chorus Level"},
+				"06": {"name": "Chorus Feedback"},
+				"07": {"name": "Chorus Delay"},
+				"08": {"name": "Chorus Rate"},
+				"09": {"name": "Chorus Depth"}
+			}
+		},
+
+		"01 00 00": {
+			"name": "Patch",
+			"_content": {
+				"00 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 10"},
+				"01 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 1"},
+				"02 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 2"},
+				"03 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 3"},
+				"04 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 4"},
+				"05 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 5"},
+				"06 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 6"},
+				"07 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 7"},
+				"08 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 8"},
+				"09 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 9"},
+				"0a 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 11"},
+				"0b 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 12"},
+				"0c 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 13"},
+				"0d 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 14"},
+				"0e 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 15"},
+				"0f 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 16"}
+			}
+		}
+	},
+
+	"PatchPart": {
+		"00": {"name": "Rx. Channel", "table": ["Ch. 1", "Ch. 2", "Ch. 3", "Ch. 4", "Ch. 5", "Ch. 6", "Ch. 7", "Ch. 8", "Ch. 9", "Ch. 10", "Ch. 11", "Ch. 12", "Ch. 13", "Ch. 14", "Ch. 15", "Ch. 16", "Off"]},
+		"01": {"name": "Rx. NRPN", "format": "onOff1"},
+		"02": {"name": "Mod. LFO Rate Control", "format": "excess64", "unit": "Hz", "resolution": 0.15625},
+		"03": {"name": "Mod. LFO Pitch Depth", "unit": "cent", "resolution": 4.6875},
+		"04": {"name": "CAf TVF Cutoff Control", "format": "excess64", "unit": "cent", "resolution": 150},
+		"05": {"name": "CAf Amplitude Control", "format": "excess64", "unit": "%", "resolution": 1.5625},
+		"06": {"name": "CAf LFO Rate Control", "format": "excess64", "unit": "Hz", "resolution": 0.15625},
+		"07": {"name": "CAf LFO Pitch Depth", "unit": "cent", "resolution": 4.6875}
+	}
+}
