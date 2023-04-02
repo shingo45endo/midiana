@@ -2,534 +2,477 @@
 	"_idKeys": ["41 42"],
 	"_addrCarries": [false, false, true],
 
-	"_content": {
-		"00 00 00": {
-			"name": "System",
-			"_content": {
-				"00 05": {"name": "System Output Assign", "table": ["Selected", "Fixed"]},
-				"00 7f": {"name": "System Mode Set", "table": ["Mode-1", "Mode-2"]},
+	"00 00 00": {
+		"name": "System",
+		"00 05": {"name": "System Output Assign", "table": ["Selected", "Fixed"]},
+		"00 7f": {"name": "System Mode Set", "table": ["Mode-1", "Mode-2"]},
 
-				"01 00": {
-					"name": "Channel Msg Rx. Port",
-					"table": {"$ref": "#/tableRxPort"},
-					"_content": {
-						"00": {"name": "Block 00"},
-						"01": {"name": "Block 01"},
-						"02": {"name": "Block 02"},
-						"03": {"name": "Block 03"},
-						"04": {"name": "Block 04"},
-						"05": {"name": "Block 05"},
-						"06": {"name": "Block 06"},
-						"07": {"name": "Block 07"},
-						"08": {"name": "Block 08"},
-						"09": {"name": "Block 09"},
-						"0a": {"name": "Block 0A"},
-						"0b": {"name": "Block 0B"},
-						"0c": {"name": "Block 0C"},
-						"0d": {"name": "Block 0D"},
-						"0e": {"name": "Block 0E"},
-						"0f": {"name": "Block 0F"},
-						"10": {"name": "Block 10"},
-						"11": {"name": "Block 11"},
-						"12": {"name": "Block 12"},
-						"13": {"name": "Block 13"},
-						"14": {"name": "Block 14"},
-						"15": {"name": "Block 15"},
-						"16": {"name": "Block 16"},
-						"17": {"name": "Block 17"},
-						"18": {"name": "Block 18"},
-						"19": {"name": "Block 19"},
-						"1a": {"name": "Block 1A"},
-						"1b": {"name": "Block 1B"},
-						"1c": {"name": "Block 1C"},
-						"1d": {"name": "Block 1D"},
-						"1e": {"name": "Block 1E"},
-						"1f": {"name": "Block 1F"},
-						"20": {"name": "Block 20"},
-						"21": {"name": "Block 21"},
-						"22": {"name": "Block 22"},
-						"23": {"name": "Block 23"},
-						"24": {"name": "Block 24"},
-						"25": {"name": "Block 25"},
-						"26": {"name": "Block 26"},
-						"27": {"name": "Block 27"},
-						"28": {"name": "Block 28"},
-						"29": {"name": "Block 29"},
-						"2a": {"name": "Block 2A"},
-						"2b": {"name": "Block 2B"},
-						"2c": {"name": "Block 2C"},
-						"2d": {"name": "Block 2D"},
-						"2e": {"name": "Block 2E"},
-						"2f": {"name": "Block 2F"},
-						"30": {"name": "Block 30"},
-						"31": {"name": "Block 31"},
-						"32": {"name": "Block 32"},
-						"33": {"name": "Block 33"},
-						"34": {"name": "Block 34"},
-						"35": {"name": "Block 35"},
-						"36": {"name": "Block 36"},
-						"37": {"name": "Block 37"},
-						"38": {"name": "Block 38"},
-						"39": {"name": "Block 39"},
-						"3a": {"name": "Block 3A"},
-						"3b": {"name": "Block 3B"},
-						"3c": {"name": "Block 3C"},
-						"3d": {"name": "Block 3D"},
-						"3e": {"name": "Block 3E"},
-						"3f": {"name": "Block 3F"}
-					}
-				}
-			}
-		},
+		"01 00": {
+			"name": "Channel Msg Rx. Port", "table": {"$ref": "#/tableRxPort"},
+			"00": {"name": "Block 00"},
+			"01": {"name": "Block 01"},
+			"02": {"name": "Block 02"},
+			"03": {"name": "Block 03"},
+			"04": {"name": "Block 04"},
+			"05": {"name": "Block 05"},
+			"06": {"name": "Block 06"},
+			"07": {"name": "Block 07"},
+			"08": {"name": "Block 08"},
+			"09": {"name": "Block 09"},
+			"0a": {"name": "Block 0A"},
+			"0b": {"name": "Block 0B"},
+			"0c": {"name": "Block 0C"},
+			"0d": {"name": "Block 0D"},
+			"0e": {"name": "Block 0E"},
+			"0f": {"name": "Block 0F"},
+			"10": {"name": "Block 10"},
+			"11": {"name": "Block 11"},
+			"12": {"name": "Block 12"},
+			"13": {"name": "Block 13"},
+			"14": {"name": "Block 14"},
+			"15": {"name": "Block 15"},
+			"16": {"name": "Block 16"},
+			"17": {"name": "Block 17"},
+			"18": {"name": "Block 18"},
+			"19": {"name": "Block 19"},
+			"1a": {"name": "Block 1A"},
+			"1b": {"name": "Block 1B"},
+			"1c": {"name": "Block 1C"},
+			"1d": {"name": "Block 1D"},
+			"1e": {"name": "Block 1E"},
+			"1f": {"name": "Block 1F"},
+			"20": {"name": "Block 20"},
+			"21": {"name": "Block 21"},
+			"22": {"name": "Block 22"},
+			"23": {"name": "Block 23"},
+			"24": {"name": "Block 24"},
+			"25": {"name": "Block 25"},
+			"26": {"name": "Block 26"},
+			"27": {"name": "Block 27"},
+			"28": {"name": "Block 28"},
+			"29": {"name": "Block 29"},
+			"2a": {"name": "Block 2A"},
+			"2b": {"name": "Block 2B"},
+			"2c": {"name": "Block 2C"},
+			"2d": {"name": "Block 2D"},
+			"2e": {"name": "Block 2E"},
+			"2f": {"name": "Block 2F"},
+			"30": {"name": "Block 30"},
+			"31": {"name": "Block 31"},
+			"32": {"name": "Block 32"},
+			"33": {"name": "Block 33"},
+			"34": {"name": "Block 34"},
+			"35": {"name": "Block 35"},
+			"36": {"name": "Block 36"},
+			"37": {"name": "Block 37"},
+			"38": {"name": "Block 38"},
+			"39": {"name": "Block 39"},
+			"3a": {"name": "Block 3A"},
+			"3b": {"name": "Block 3B"},
+			"3c": {"name": "Block 3C"},
+			"3d": {"name": "Block 3D"},
+			"3e": {"name": "Block 3E"},
+			"3f": {"name": "Block 3F"}
+		}
+	},
 
-		"40 00 00": {"_content": {"$ref": "#/PatchCommon"}, "name": "Patch Common"},
-		"50 00 00": {"_content": {"$ref": "#/PatchCommon"}, "name": "Patch Common (B)"},
+	"40 00 00": {"_content": {"$ref": "#/PatchCommon"}, "name": "Patch Common"},
+	"50 00 00": {"_content": {"$ref": "#/PatchCommon"}, "name": "Patch Common (B)"},
 
-		"40 10 00": {
-			"name": "Patch Part",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 16"}
-			}
-		},
-		"40 20 00": {
-			"name": "Patch Part",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 16"}
-			}
-		},
-		"40 40 00": {
-			"name": "Patch Part",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 16"}
-			}
-		},
-		"50 10 00": {
-			"name": "Patch Part (B)",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 16"}
-			}
-		},
-		"50 20 00": {
-			"name": "Patch Part (B)",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 16"}
-			}
-		},
-		"50 40 00": {
-			"name": "Patch Part (B)",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 16"}
-			}
-		},
+	"40 10 00": {
+		"name": "Patch Part",
+		"00 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 16"}
+	},
+	"40 20 00": {
+		"name": "Patch Part",
+		"00 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 16"}
+	},
+	"40 40 00": {
+		"name": "Patch Part",
+		"00 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 16"}
+	},
+	"50 10 00": {
+		"name": "Patch Part (B)",
+		"00 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart1x"}, "name": "Part 16"}
+	},
+	"50 20 00": {
+		"name": "Patch Part (B)",
+		"00 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart2x"}, "name": "Part 16"}
+	},
+	"50 40 00": {
+		"name": "Patch Part (B)",
+		"00 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart4x"}, "name": "Part 16"}
+	},
 
-		"41 00 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 1"},
-		"41 10 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 2"},
-		"51 00 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 1 (B)"},
-		"51 10 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 2 (B)"},
+	"41 00 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 1"},
+	"41 10 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 2"},
+	"51 00 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 1 (B)"},
+	"51 10 00": {"_content": {"$ref": "#/DrumSetup"}, "name": "Drum Map 2 (B)"},
 
-		"20 00 00": {
-			"name": "User Instrument",
-			"00 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #64"},
-			"10 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #65"}
-		},
+	"20 00 00": {
+		"name": "User Instrument",
+		"00 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #64"},
+		"10 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #65"}
+	},
 
-		"21 00 00": {
-			"name": "User Drum",
-			"00 00": {"_content": {"$ref": "#/UserDrumSet"}, "name": "Prog #65"},
-			"10 00": {"_content": {"$ref": "#/UserDrumSet"}, "name": "Prog #66"}
-		},
+	"21 00 00": {
+		"name": "User Drum",
+		"00 00": {"_content": {"$ref": "#/UserDrumSet"}, "name": "Prog #65"},
+		"10 00": {"_content": {"$ref": "#/UserDrumSet"}, "name": "Prog #66"}
+	},
 
-		"22 00 00": {
-			"name": "User EFX",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "Source EFX Type (MSB)", "format": "hex"},
-				"01 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "Source EFX Type (LSB)", "format": "hex"},
-				"03 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 1"},
-				"04 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 2"},
-				"05 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 3"},
-				"06 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 4"},
-				"07 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 5"},
-				"08 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 6"},
-				"09 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 7"},
-				"0a 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 8"},
-				"0b 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 9"},
-				"0c 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 10"},
-				"0d 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 11"},
-				"0e 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 12"},
-				"0f 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 13"},
-				"10 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 14"},
-				"11 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 15"},
-				"12 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 16"},
-				"13 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 17"},
-				"14 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 18"},
-				"15 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 19"},
-				"16 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 20"}
-			}
-		},
+	"22 00 00": {
+		"name": "User EFX",
+		"00 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "Source EFX Type (MSB)", "format": "hex"},
+		"01 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "Source EFX Type (LSB)", "format": "hex"},
+		"03 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 1"},
+		"04 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 2"},
+		"05 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 3"},
+		"06 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 4"},
+		"07 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 5"},
+		"08 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 6"},
+		"09 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 7"},
+		"0a 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 8"},
+		"0b 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 9"},
+		"0c 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 10"},
+		"0d 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 11"},
+		"0e 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 12"},
+		"0f 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 13"},
+		"10 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 14"},
+		"11 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 15"},
+		"12 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 16"},
+		"13 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 17"},
+		"14 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 18"},
+		"15 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 19"},
+		"16 00": {"_content": {"$ref": "#/EfxTypes"}, "name": "EFX Parameter 20"}
+	},
 
-		"23 00 00": {
-			"name": "User Patch Common",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 01"},
-				"01 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 02"},
-				"02 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 03"},
-				"03 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 04"},
-				"04 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 05"},
-				"05 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 06"},
-				"06 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 07"},
-				"07 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 08"},
-				"08 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 09"},
-				"09 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 10"},
-				"0a 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 11"},
-				"0b 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 12"},
-				"0c 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 13"},
-				"0d 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 14"},
-				"0e 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 15"},
-				"0f 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 16"}
-			}
-		},
+	"23 00 00": {
+		"name": "User Patch Common",
+		"00 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 01"},
+		"01 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 02"},
+		"02 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 03"},
+		"03 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 04"},
+		"04 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 05"},
+		"05 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 06"},
+		"06 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 07"},
+		"07 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 08"},
+		"08 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 09"},
+		"09 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 10"},
+		"0a 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 11"},
+		"0b 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 12"},
+		"0c 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 13"},
+		"0d 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 14"},
+		"0e 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 15"},
+		"0f 00": {"_content": {"$ref": "#/UserPatchCommon"}, "name": "Patch 16"}
+	},
 
-		"24 00 00": {
-			"name": "User Patch Part 1",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 01"},
-				"01 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 02"},
-				"02 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 03"},
-				"03 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 04"},
-				"04 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 05"},
-				"05 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 06"},
-				"06 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 07"},
-				"07 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 08"},
-				"08 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 09"},
-				"09 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 10"},
-				"0a 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 11"},
-				"0b 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 12"},
-				"0c 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 13"},
-				"0d 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 14"},
-				"0e 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 15"},
-				"0f 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 16"}
-			}
-		},
-		"25 00 00": {
-			"name": "User Patch Part 1",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 01"},
-				"01 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 02"},
-				"02 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 03"},
-				"03 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 04"},
-				"04 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 05"},
-				"05 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 06"},
-				"06 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 07"},
-				"07 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 08"},
-				"08 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 09"},
-				"09 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 10"},
-				"0a 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 11"},
-				"0b 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 12"},
-				"0c 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 13"},
-				"0d 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 14"},
-				"0e 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 15"},
-				"0f 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 16"}
-			}
-		},
-		"26 00 00": {
-			"name": "User Patch Part 2",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 01"},
-				"01 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 02"},
-				"02 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 03"},
-				"03 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 04"},
-				"04 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 05"},
-				"05 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 06"},
-				"06 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 07"},
-				"07 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 08"},
-				"08 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 09"},
-				"09 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 10"},
-				"0a 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 11"},
-				"0b 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 12"},
-				"0c 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 13"},
-				"0d 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 14"},
-				"0e 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 15"},
-				"0f 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 16"}
-			}
-		},
-		"27 00 00": {
-			"name": "User Patch Part 2",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 01"},
-				"01 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 02"},
-				"02 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 03"},
-				"03 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 04"},
-				"04 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 05"},
-				"05 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 06"},
-				"06 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 07"},
-				"07 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 08"},
-				"08 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 09"},
-				"09 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 10"},
-				"0a 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 11"},
-				"0b 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 12"},
-				"0c 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 13"},
-				"0d 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 14"},
-				"0e 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 15"},
-				"0f 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 16"}
-			}
-		},
+	"24 00 00": {
+		"name": "User Patch Part 1",
+		"00 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 01"},
+		"01 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 02"},
+		"02 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 03"},
+		"03 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 04"},
+		"04 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 05"},
+		"05 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 06"},
+		"06 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 07"},
+		"07 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 08"},
+		"08 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 09"},
+		"09 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 10"},
+		"0a 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 11"},
+		"0b 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 12"},
+		"0c 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 13"},
+		"0d 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 14"},
+		"0e 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 15"},
+		"0f 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 16"}
+	},
+	"25 00 00": {
+		"name": "User Patch Part 1",
+		"00 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 01"},
+		"01 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 02"},
+		"02 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 03"},
+		"03 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 04"},
+		"04 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 05"},
+		"05 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 06"},
+		"06 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 07"},
+		"07 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 08"},
+		"08 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 09"},
+		"09 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 10"},
+		"0a 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 11"},
+		"0b 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 12"},
+		"0c 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 13"},
+		"0d 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 14"},
+		"0e 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 15"},
+		"0f 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 16"}
+	},
+	"26 00 00": {
+		"name": "User Patch Part 2",
+		"00 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 01"},
+		"01 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 02"},
+		"02 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 03"},
+		"03 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 04"},
+		"04 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 05"},
+		"05 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 06"},
+		"06 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 07"},
+		"07 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 08"},
+		"08 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 09"},
+		"09 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 10"},
+		"0a 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 11"},
+		"0b 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 12"},
+		"0c 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 13"},
+		"0d 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 14"},
+		"0e 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 15"},
+		"0f 00": {"_content": {"$ref": "#/UserPatchPartA"}, "name": "Patch 16"}
+	},
+	"27 00 00": {
+		"name": "User Patch Part 2",
+		"00 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 01"},
+		"01 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 02"},
+		"02 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 03"},
+		"03 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 04"},
+		"04 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 05"},
+		"05 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 06"},
+		"06 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 07"},
+		"07 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 08"},
+		"08 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 09"},
+		"09 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 10"},
+		"0a 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 11"},
+		"0b 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 12"},
+		"0c 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 13"},
+		"0d 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 14"},
+		"0e 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 15"},
+		"0f 00": {"_content": {"$ref": "#/UserPatchPartB"}, "name": "Patch 16"}
+	},
 
-		"7d 10 00": {
-			"name": "VariPhrase",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 16"}
-			}
-		},
+	"7d 10 00": {
+		"name": "VariPhrase",
+		"00 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/VariPhrase"}, "name": "Part 16"}
+	},
 
-		"08 00 00": {
-			"name": "Bulk Dump (Setup)",
-			"_content": {
-				"00": {"size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"40": {
-					"name": "Channel Msg Rx. Port",
-					"table": {"$ref": "#/tableRxPort"},
-					"_content": {
-						"00": {"name": "Block 00", "size": 2, "type": "nibbled8bitBE"},
-						"02": {"name": "Block 01", "size": 2, "type": "nibbled8bitBE"},
-						"04": {"name": "Block 02", "size": 2, "type": "nibbled8bitBE"},
-						"06": {"name": "Block 03", "size": 2, "type": "nibbled8bitBE"},
-						"08": {"name": "Block 04", "size": 2, "type": "nibbled8bitBE"},
-						"0a": {"name": "Block 05", "size": 2, "type": "nibbled8bitBE"},
-						"0c": {"name": "Block 06", "size": 2, "type": "nibbled8bitBE"},
-						"0e": {"name": "Block 07", "size": 2, "type": "nibbled8bitBE"},
-						"10": {"name": "Block 08", "size": 2, "type": "nibbled8bitBE"},
-						"12": {"name": "Block 09", "size": 2, "type": "nibbled8bitBE"},
-						"14": {"name": "Block 0A", "size": 2, "type": "nibbled8bitBE"},
-						"16": {"name": "Block 0B", "size": 2, "type": "nibbled8bitBE"},
-						"18": {"name": "Block 0C", "size": 2, "type": "nibbled8bitBE"},
-						"1a": {"name": "Block 0D", "size": 2, "type": "nibbled8bitBE"},
-						"1c": {"name": "Block 0E", "size": 2, "type": "nibbled8bitBE"},
-						"1e": {"name": "Block 0F", "size": 2, "type": "nibbled8bitBE"},
-						"20": {"name": "Block 10", "size": 2, "type": "nibbled8bitBE"},
-						"22": {"name": "Block 11", "size": 2, "type": "nibbled8bitBE"},
-						"24": {"name": "Block 12", "size": 2, "type": "nibbled8bitBE"},
-						"26": {"name": "Block 13", "size": 2, "type": "nibbled8bitBE"},
-						"28": {"name": "Block 14", "size": 2, "type": "nibbled8bitBE"},
-						"2a": {"name": "Block 15", "size": 2, "type": "nibbled8bitBE"},
-						"2c": {"name": "Block 16", "size": 2, "type": "nibbled8bitBE"},
-						"2e": {"name": "Block 17", "size": 2, "type": "nibbled8bitBE"},
-						"30": {"name": "Block 18", "size": 2, "type": "nibbled8bitBE"},
-						"32": {"name": "Block 19", "size": 2, "type": "nibbled8bitBE"},
-						"34": {"name": "Block 1A", "size": 2, "type": "nibbled8bitBE"},
-						"36": {"name": "Block 1B", "size": 2, "type": "nibbled8bitBE"},
-						"38": {"name": "Block 1C", "size": 2, "type": "nibbled8bitBE"},
-						"3a": {"name": "Block 1D", "size": 2, "type": "nibbled8bitBE"},
-						"3c": {"name": "Block 1E", "size": 2, "type": "nibbled8bitBE"},
-						"3e": {"name": "Block 1F", "size": 2, "type": "nibbled8bitBE"}
-					}
-				}
-			}
-		},
-		"08 01 00": {
-			"name": "Bulk Dump (Setup C/D)",
-			"_content": {
-				"00": {"size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"40": {
-					"name": "Channel Msg Rx. Port",
-					"table": {"$ref": "#/tableRxPort"},
-					"_content": {
-						"00": {"name": "Block 20", "size": 2, "type": "nibbled8bitBE"},
-						"02": {"name": "Block 21", "size": 2, "type": "nibbled8bitBE"},
-						"04": {"name": "Block 22", "size": 2, "type": "nibbled8bitBE"},
-						"06": {"name": "Block 23", "size": 2, "type": "nibbled8bitBE"},
-						"08": {"name": "Block 24", "size": 2, "type": "nibbled8bitBE"},
-						"0a": {"name": "Block 25", "size": 2, "type": "nibbled8bitBE"},
-						"0c": {"name": "Block 26", "size": 2, "type": "nibbled8bitBE"},
-						"0e": {"name": "Block 27", "size": 2, "type": "nibbled8bitBE"},
-						"10": {"name": "Block 28", "size": 2, "type": "nibbled8bitBE"},
-						"12": {"name": "Block 29", "size": 2, "type": "nibbled8bitBE"},
-						"14": {"name": "Block 2A", "size": 2, "type": "nibbled8bitBE"},
-						"16": {"name": "Block 2B", "size": 2, "type": "nibbled8bitBE"},
-						"18": {"name": "Block 2C", "size": 2, "type": "nibbled8bitBE"},
-						"1a": {"name": "Block 2D", "size": 2, "type": "nibbled8bitBE"},
-						"1c": {"name": "Block 2E", "size": 2, "type": "nibbled8bitBE"},
-						"1e": {"name": "Block 2F", "size": 2, "type": "nibbled8bitBE"},
-						"20": {"name": "Block 30", "size": 2, "type": "nibbled8bitBE"},
-						"22": {"name": "Block 31", "size": 2, "type": "nibbled8bitBE"},
-						"24": {"name": "Block 32", "size": 2, "type": "nibbled8bitBE"},
-						"26": {"name": "Block 33", "size": 2, "type": "nibbled8bitBE"},
-						"28": {"name": "Block 34", "size": 2, "type": "nibbled8bitBE"},
-						"2a": {"name": "Block 35", "size": 2, "type": "nibbled8bitBE"},
-						"2c": {"name": "Block 36", "size": 2, "type": "nibbled8bitBE"},
-						"2e": {"name": "Block 37", "size": 2, "type": "nibbled8bitBE"},
-						"30": {"name": "Block 38", "size": 2, "type": "nibbled8bitBE"},
-						"32": {"name": "Block 39", "size": 2, "type": "nibbled8bitBE"},
-						"34": {"name": "Block 3A", "size": 2, "type": "nibbled8bitBE"},
-						"36": {"name": "Block 3B", "size": 2, "type": "nibbled8bitBE"},
-						"38": {"name": "Block 3C", "size": 2, "type": "nibbled8bitBE"},
-						"3a": {"name": "Block 3D", "size": 2, "type": "nibbled8bitBE"},
-						"3c": {"name": "Block 3E", "size": 2, "type": "nibbled8bitBE"},
-						"3e": {"name": "Block 3F", "size": 2, "type": "nibbled8bitBE"}
-					}
-				}
-			}
-		},
-		"2a 00 00": {"name": "Bulk Dump (User EFX)", "size": 2048, "type": "nibbled8bitBE", "_isIndividual": false},
-		"2b 00 00": {"name": "Bulk Dump (User Patch)", "size": 12288, "type": "nibbled8bitBE", "_isIndividual": false},
-		"28 00 00": {
-			"name": "Bulk Dump (User Instrument)",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #64"},
-				"10 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #65"}
-			}
-		},
-		"29 00 00": {
-			"name": "Bulk Dump (User Drum Set)",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/DumpUserDrumSet"}, "name": "Prog #65"},
-				"10 00": {"_content": {"$ref": "#/DumpUserDrumSet"}, "name": "Prog #66"}
-			}
-		},
-		"48 00 00": {
-			"name": "Bulk Dump",
-			"_content": {
-				"00 00 00": {"_content": {"$ref": "#/DumpPort"}},
-				"10 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port B"},
-				"20 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port C"},
-				"30 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port D"}
-			}
-		},
+	"08 00 00": {
+		"name": "Bulk Dump (Setup)",
+			"00": {"size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"40": {
+				"name": "Channel Msg Rx. Port", "table": {"$ref": "#/tableRxPort"},
+				"00": {"name": "Block 00", "size": 2, "type": "nibbled8bitBE"},
+				"02": {"name": "Block 01", "size": 2, "type": "nibbled8bitBE"},
+				"04": {"name": "Block 02", "size": 2, "type": "nibbled8bitBE"},
+				"06": {"name": "Block 03", "size": 2, "type": "nibbled8bitBE"},
+				"08": {"name": "Block 04", "size": 2, "type": "nibbled8bitBE"},
+				"0a": {"name": "Block 05", "size": 2, "type": "nibbled8bitBE"},
+				"0c": {"name": "Block 06", "size": 2, "type": "nibbled8bitBE"},
+				"0e": {"name": "Block 07", "size": 2, "type": "nibbled8bitBE"},
+				"10": {"name": "Block 08", "size": 2, "type": "nibbled8bitBE"},
+				"12": {"name": "Block 09", "size": 2, "type": "nibbled8bitBE"},
+				"14": {"name": "Block 0A", "size": 2, "type": "nibbled8bitBE"},
+				"16": {"name": "Block 0B", "size": 2, "type": "nibbled8bitBE"},
+				"18": {"name": "Block 0C", "size": 2, "type": "nibbled8bitBE"},
+				"1a": {"name": "Block 0D", "size": 2, "type": "nibbled8bitBE"},
+				"1c": {"name": "Block 0E", "size": 2, "type": "nibbled8bitBE"},
+				"1e": {"name": "Block 0F", "size": 2, "type": "nibbled8bitBE"},
+				"20": {"name": "Block 10", "size": 2, "type": "nibbled8bitBE"},
+				"22": {"name": "Block 11", "size": 2, "type": "nibbled8bitBE"},
+				"24": {"name": "Block 12", "size": 2, "type": "nibbled8bitBE"},
+				"26": {"name": "Block 13", "size": 2, "type": "nibbled8bitBE"},
+				"28": {"name": "Block 14", "size": 2, "type": "nibbled8bitBE"},
+				"2a": {"name": "Block 15", "size": 2, "type": "nibbled8bitBE"},
+				"2c": {"name": "Block 16", "size": 2, "type": "nibbled8bitBE"},
+				"2e": {"name": "Block 17", "size": 2, "type": "nibbled8bitBE"},
+				"30": {"name": "Block 18", "size": 2, "type": "nibbled8bitBE"},
+				"32": {"name": "Block 19", "size": 2, "type": "nibbled8bitBE"},
+				"34": {"name": "Block 1A", "size": 2, "type": "nibbled8bitBE"},
+				"36": {"name": "Block 1B", "size": 2, "type": "nibbled8bitBE"},
+				"38": {"name": "Block 1C", "size": 2, "type": "nibbled8bitBE"},
+				"3a": {"name": "Block 1D", "size": 2, "type": "nibbled8bitBE"},
+				"3c": {"name": "Block 1E", "size": 2, "type": "nibbled8bitBE"},
+				"3e": {"name": "Block 1F", "size": 2, "type": "nibbled8bitBE"}
+		}
+	},
+	"08 01 00": {
+		"name": "Bulk Dump (Setup C/D)",
+		"00": {"size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+		"40": {
+			"name": "Channel Msg Rx. Port", "table": {"$ref": "#/tableRxPort"},
+			"00": {"name": "Block 20", "size": 2, "type": "nibbled8bitBE"},
+			"02": {"name": "Block 21", "size": 2, "type": "nibbled8bitBE"},
+			"04": {"name": "Block 22", "size": 2, "type": "nibbled8bitBE"},
+			"06": {"name": "Block 23", "size": 2, "type": "nibbled8bitBE"},
+			"08": {"name": "Block 24", "size": 2, "type": "nibbled8bitBE"},
+			"0a": {"name": "Block 25", "size": 2, "type": "nibbled8bitBE"},
+			"0c": {"name": "Block 26", "size": 2, "type": "nibbled8bitBE"},
+			"0e": {"name": "Block 27", "size": 2, "type": "nibbled8bitBE"},
+			"10": {"name": "Block 28", "size": 2, "type": "nibbled8bitBE"},
+			"12": {"name": "Block 29", "size": 2, "type": "nibbled8bitBE"},
+			"14": {"name": "Block 2A", "size": 2, "type": "nibbled8bitBE"},
+			"16": {"name": "Block 2B", "size": 2, "type": "nibbled8bitBE"},
+			"18": {"name": "Block 2C", "size": 2, "type": "nibbled8bitBE"},
+			"1a": {"name": "Block 2D", "size": 2, "type": "nibbled8bitBE"},
+			"1c": {"name": "Block 2E", "size": 2, "type": "nibbled8bitBE"},
+			"1e": {"name": "Block 2F", "size": 2, "type": "nibbled8bitBE"},
+			"20": {"name": "Block 30", "size": 2, "type": "nibbled8bitBE"},
+			"22": {"name": "Block 31", "size": 2, "type": "nibbled8bitBE"},
+			"24": {"name": "Block 32", "size": 2, "type": "nibbled8bitBE"},
+			"26": {"name": "Block 33", "size": 2, "type": "nibbled8bitBE"},
+			"28": {"name": "Block 34", "size": 2, "type": "nibbled8bitBE"},
+			"2a": {"name": "Block 35", "size": 2, "type": "nibbled8bitBE"},
+			"2c": {"name": "Block 36", "size": 2, "type": "nibbled8bitBE"},
+			"2e": {"name": "Block 37", "size": 2, "type": "nibbled8bitBE"},
+			"30": {"name": "Block 38", "size": 2, "type": "nibbled8bitBE"},
+			"32": {"name": "Block 39", "size": 2, "type": "nibbled8bitBE"},
+			"34": {"name": "Block 3A", "size": 2, "type": "nibbled8bitBE"},
+			"36": {"name": "Block 3B", "size": 2, "type": "nibbled8bitBE"},
+			"38": {"name": "Block 3C", "size": 2, "type": "nibbled8bitBE"},
+			"3a": {"name": "Block 3D", "size": 2, "type": "nibbled8bitBE"},
+			"3c": {"name": "Block 3E", "size": 2, "type": "nibbled8bitBE"},
+			"3e": {"name": "Block 3F", "size": 2, "type": "nibbled8bitBE"}
+		}
+	},
+	"2a 00 00": {"name": "Bulk Dump (User EFX)", "size": 2048, "type": "nibbled8bitBE", "_isIndividual": false},
+	"2b 00 00": {"name": "Bulk Dump (User Patch)", "size": 12288, "type": "nibbled8bitBE", "_isIndividual": false},
+	"28 00 00": {
+		"name": "Bulk Dump (User Instrument)",
+		"00 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #64"},
+		"10 00": {"_content": {"$ref": "#/UserInstrument"}, "name": "Bank #65"}
+	},
+	"29 00 00": {
+		"name": "Bulk Dump (User Drum Set)",
+		"00 00": {"_content": {"$ref": "#/DumpUserDrumSet"}, "name": "Prog #65"},
+		"10 00": {"_content": {"$ref": "#/DumpUserDrumSet"}, "name": "Prog #66"}
+	},
+	"48 00 00": {
+		"name": "Bulk Dump",
+		"00 00 00": {"_content": {"$ref": "#/DumpPort"}},
+		"10 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port B"},
+		"20 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port C"},
+		"30 00 00": {"_content": {"$ref": "#/DumpPort"}, "name": "Port D"}
+	},
 
-		"0c 00 00": {
-			"name": "Bulk Dump Request",
-			"_content": {
-				"00 00": {"name": "Parameter"},
-				"00 01": {
-					"name": "List",
-					"_content": {
-						"00": {"name": "Instrument"},
-						"01": {"name": "Drum Set"},
-						"02": {"name": "Drum Instrument"},
-						"03": {"name": "Insertion Effect"},
-						"04": {"name": "Preset Patch"}
-					}
-				}
-			}
-		},
+	"0c 00 00": {
+		"name": "Bulk Dump Request",
+		"00 00": {"name": "Parameter"},
+		"00 01": {
+			"name": "List",
+			"00": {"name": "Instrument"},
+			"01": {"name": "Drum Set"},
+			"02": {"name": "Drum Instrument"},
+			"03": {"name": "Insertion Effect"},
+			"04": {"name": "Preset Patch"}
+		}
+	},
 
-		"40 30 00": {
-			"name": "Information",
-			"_content": {
-				"00 00": {"name": "System", "size": 32, "format": "ascii"},
-				"00 20": {
-					"name": "Wave ROM",
-					"_content": {
-						"00 00": {"name": "#0", "size": 32, "format": "ascii"},
-						"01 00": {"name": "#1", "size": 32, "format": "ascii"},
-						"02 00": {"name": "#2", "size": 32, "format": "ascii"}
-					}
-				}
-			}
+	"40 30 00": {
+		"name": "Information",
+		"00 00": {"name": "System", "size": 32, "format": "ascii"},
+		"00 20": {
+			"name": "Wave ROM",
+			"00 00": {"name": "#0", "size": 32, "format": "ascii"},
+			"01 00": {"name": "#1", "size": 32, "format": "ascii"},
+			"02 00": {"name": "#2", "size": 32, "format": "ascii"}
 		}
 	},
 
@@ -544,26 +487,23 @@
 		"01 00": {"name": "Patch Name", "size": 16, "_isVarLen": true, "format": "asciiA"},
 
 		"01 10": {
-			"name": "Voice Reserve",
-			"_isIndividual": true,
-			"_content": {
-				"00": {"name": "Part 10"},
-				"01": {"name": "Part 1"},
-				"02": {"name": "Part 2"},
-				"03": {"name": "Part 3"},
-				"04": {"name": "Part 4"},
-				"05": {"name": "Part 5"},
-				"06": {"name": "Part 6"},
-				"07": {"name": "Part 7"},
-				"08": {"name": "Part 8"},
-				"09": {"name": "Part 9"},
-				"0a": {"name": "Part 11"},
-				"0b": {"name": "Part 12"},
-				"0c": {"name": "Part 13"},
-				"0d": {"name": "Part 14"},
-				"0e": {"name": "Part 15"},
-				"0f": {"name": "Part 16"}
-			}
+			"name": "Voice Reserve", "_isIndividual": true,
+			"00": {"name": "Part 10"},
+			"01": {"name": "Part 1"},
+			"02": {"name": "Part 2"},
+			"03": {"name": "Part 3"},
+			"04": {"name": "Part 4"},
+			"05": {"name": "Part 5"},
+			"06": {"name": "Part 6"},
+			"07": {"name": "Part 7"},
+			"08": {"name": "Part 8"},
+			"09": {"name": "Part 9"},
+			"0a": {"name": "Part 11"},
+			"0b": {"name": "Part 12"},
+			"0c": {"name": "Part 13"},
+			"0d": {"name": "Part 14"},
+			"0e": {"name": "Part 15"},
+			"0f": {"name": "Part 16"}
 		},
 
 		"01 20": {"name": "Assigner Separate Wall"},
@@ -638,10 +578,8 @@
 	"PatchPart1x": {
 		"00": {
 			"name": "Tone Number",
-			"_content": {
-				"00": {"name": "Bank Select"},
-				"01": {"name": "Program Change"}
-			}
+			"00": {"name": "Bank Select"},
+			"01": {"name": "Program Change"}
 		},
 		"02": {"name": "Rx. Channel", "table": {"$ref": "#/tableRxChannel"}},
 		"03": {"name": "Rx. Pitch Bend", "format": "onOff1"},
@@ -681,10 +619,8 @@
 
 		"28": {
 			"name": "Bank Select LSB Range",
-			"_content": {
-				"00": {"name": "From"},
-				"01": {"name": "To"}
-			}
+			"00": {"name": "From"},
+			"01": {"name": "To"}
 		},
 
 		"2a": {"name": "Pitch Fine Tune", "size": 2, "type": "14bitBE", "format": "excess8192", "unit": "cent", "resolution": 0.01220703125},
@@ -702,42 +638,37 @@
 		"38": {"name": "Tone Modify 9 (Attack Delay)", "format": "excess64"},
 
 		"40": {
-			"name": "Scale Tuning",
-			"format": "excess64", "unit": "cent", "_isIndividual": true,
-			"_content": {
-				"00": {"name": "C"},
-				"01": {"name": "C#"},
-				"02": {"name": "D"},
-				"03": {"name": "D#"},
-				"04": {"name": "E"},
-				"05": {"name": "F"},
-				"06": {"name": "F#"},
-				"07": {"name": "G"},
-				"08": {"name": "G#"},
-				"09": {"name": "A"},
-				"0a": {"name": "A#"},
-				"0b": {"name": "B"}
-			}
+			"name": "Scale Tuning", "format": "excess64", "unit": "cent", "_isIndividual": true,
+			"00": {"name": "C"},
+			"01": {"name": "C#"},
+			"02": {"name": "D"},
+			"03": {"name": "D#"},
+			"04": {"name": "E"},
+			"05": {"name": "F"},
+			"06": {"name": "F#"},
+			"07": {"name": "G"},
+			"08": {"name": "G#"},
+			"09": {"name": "A"},
+			"0a": {"name": "A#"},
+			"0b": {"name": "B"}
 		},
 
 		"50": {"name": "Tone Name", "size": 12, "_isVarLen": true, "format": "asciiA"},
 
 		"60": {
 			"name": "Scale Tuning Range",
-			"_content": {
-				"00": {"name": "C"},
-				"01": {"name": "C#"},
-				"02": {"name": "D"},
-				"03": {"name": "D#"},
-				"04": {"name": "E"},
-				"05": {"name": "F"},
-				"06": {"name": "F#"},
-				"07": {"name": "G"},
-				"08": {"name": "G#"},
-				"09": {"name": "A"},
-				"0a": {"name": "A#"},
-				"0b": {"name": "B"}
-			}
+			"00": {"name": "C"},
+			"01": {"name": "C#"},
+			"02": {"name": "D"},
+			"03": {"name": "D#"},
+			"04": {"name": "E"},
+			"05": {"name": "F"},
+			"06": {"name": "F#"},
+			"07": {"name": "G"},
+			"08": {"name": "G#"},
+			"09": {"name": "A"},
+			"0a": {"name": "A#"},
+			"0b": {"name": "B"}
 		}
 	},
 
@@ -775,20 +706,18 @@
 
 		"51": {
 			"name": "Harmonic Bar",
-			"_content": {
-				"00": {"name": "Set"},
-				"01": {"name": "Percussion", "table": {"0": "Off", "1": "4, Short", "2": "2+2/3, Short", "65": "4, Long", "66": "2+2/3, Long"}},
+			"00": {"name": "Set"},
+			"01": {"name": "Percussion", "table": {"0": "Off", "1": "4, Short", "2": "2+2/3, Short", "65": "4, Long", "66": "2+2/3, Long"}},
 
-				"02": {"name": "16'"},
-				"03": {"name": "5+1/3'"},
-				"04": {"name": "8'"},
-				"05": {"name": "4'"},
-				"06": {"name": "2+2/3'"},
-				"07": {"name": "2'"},
-				"08": {"name": "1+3/5'"},
-				"09": {"name": "1+1/3'"},
-				"0a": {"name": "1'"}
-			}
+			"02": {"name": "16'"},
+			"03": {"name": "5+1/3'"},
+			"04": {"name": "8'"},
+			"05": {"name": "4'"},
+			"06": {"name": "2+2/3'"},
+			"07": {"name": "2'"},
+			"08": {"name": "1+3/5'"},
+			"09": {"name": "1+1/3'"},
+			"0a": {"name": "1'"}
 		}
 	},
 
@@ -927,10 +856,8 @@
 	"UserPatchPartA": {
 		"00": {
 			"name": "Tone Number",
-			"_content": {
-				"00": {"name": "Bank Select"},
-				"01": {"name": "Program Change"}
-			}
+			"00": {"name": "Bank Select"},
+			"01": {"name": "Program Change"}
 		},
 		"02": {"name": "Rx. Channel", "table": {"$ref": "#/tableRxChannel"}},
 		"03": {"name": "Rx. Pitch Bend", "format": "onOff1"},
@@ -982,20 +909,18 @@
 		"40": {
 			"name": "Scale Tuning",
 			"format": "excess64", "unit": "cent", "_isIndividual": true,
-			"_content": {
-				"00": {"name": "C"},
-				"01": {"name": "C#"},
-				"02": {"name": "D"},
-				"03": {"name": "D#"},
-				"04": {"name": "E"},
-				"05": {"name": "F"},
-				"06": {"name": "F#"},
-				"07": {"name": "G"},
-				"08": {"name": "G#"},
-				"09": {"name": "A"},
-				"0a": {"name": "A#"},
-				"0b": {"name": "B"}
-			}
+			"00": {"name": "C"},
+			"01": {"name": "C#"},
+			"02": {"name": "D"},
+			"03": {"name": "D#"},
+			"04": {"name": "E"},
+			"05": {"name": "F"},
+			"06": {"name": "F#"},
+			"07": {"name": "G"},
+			"08": {"name": "G#"},
+			"09": {"name": "A"},
+			"0a": {"name": "A#"},
+			"0b": {"name": "B"}
 		},
 
 		"50": {"_content": {"$ref": "#/Control"}, "name": "Mod."},
@@ -1362,24 +1287,22 @@
 		"00": {"name": "Patch Name", "size": 32, "type": "nibbled8bitBE", "format": "asciiA"},
 		"20": {
 			"name": "Voice Reserve",
-			"_content": {
-				"00": {"name": "Part 10", "size": 2, "type": "nibbled8bitBE"},
-				"02": {"name": "Part 1", "size": 2, "type": "nibbled8bitBE"},
-				"04": {"name": "Part 2", "size": 2, "type": "nibbled8bitBE"},
-				"06": {"name": "Part 3", "size": 2, "type": "nibbled8bitBE"},
-				"08": {"name": "Part 4", "size": 2, "type": "nibbled8bitBE"},
-				"0a": {"name": "Part 5", "size": 2, "type": "nibbled8bitBE"},
-				"0c": {"name": "Part 6", "size": 2, "type": "nibbled8bitBE"},
-				"0e": {"name": "Part 7", "size": 2, "type": "nibbled8bitBE"},
-				"10": {"name": "Part 8", "size": 2, "type": "nibbled8bitBE"},
-				"12": {"name": "Part 9", "size": 2, "type": "nibbled8bitBE"},
-				"14": {"name": "Part 11", "size": 2, "type": "nibbled8bitBE"},
-				"16": {"name": "Part 12", "size": 2, "type": "nibbled8bitBE"},
-				"18": {"name": "Part 13", "size": 2, "type": "nibbled8bitBE"},
-				"1a": {"name": "Part 14", "size": 2, "type": "nibbled8bitBE"},
-				"1c": {"name": "Part 15", "size": 2, "type": "nibbled8bitBE"},
-				"1e": {"name": "Part 16", "size": 2, "type": "nibbled8bitBE"}
-			}
+			"00": {"name": "Part 10", "size": 2, "type": "nibbled8bitBE"},
+			"02": {"name": "Part 1", "size": 2, "type": "nibbled8bitBE"},
+			"04": {"name": "Part 2", "size": 2, "type": "nibbled8bitBE"},
+			"06": {"name": "Part 3", "size": 2, "type": "nibbled8bitBE"},
+			"08": {"name": "Part 4", "size": 2, "type": "nibbled8bitBE"},
+			"0a": {"name": "Part 5", "size": 2, "type": "nibbled8bitBE"},
+			"0c": {"name": "Part 6", "size": 2, "type": "nibbled8bitBE"},
+			"0e": {"name": "Part 7", "size": 2, "type": "nibbled8bitBE"},
+			"10": {"name": "Part 8", "size": 2, "type": "nibbled8bitBE"},
+			"12": {"name": "Part 9", "size": 2, "type": "nibbled8bitBE"},
+			"14": {"name": "Part 11", "size": 2, "type": "nibbled8bitBE"},
+			"16": {"name": "Part 12", "size": 2, "type": "nibbled8bitBE"},
+			"18": {"name": "Part 13", "size": 2, "type": "nibbled8bitBE"},
+			"1a": {"name": "Part 14", "size": 2, "type": "nibbled8bitBE"},
+			"1c": {"name": "Part 15", "size": 2, "type": "nibbled8bitBE"},
+			"1e": {"name": "Part 16", "size": 2, "type": "nibbled8bitBE"}
 		},
 		"40": {"name": "(Unknown)", "size": 2, "type": "nibbled8bitBE"},
 		"42": {"name": "(Unknown)", "size": 2, "type": "nibbled8bitBE"},
@@ -1628,54 +1551,48 @@
 		"00 00 10": {"_content": {"$ref": "#/DumpPatchCommon"}, "name": "Patch Common"},
 		"00 01 10": {
 			"name": "Patch Part",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 10"},
-				"01 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 1"},
-				"03 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 2"},
-				"05 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 3"},
-				"07 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 4"},
-				"08 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 5"},
-				"0a 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 6"},
-				"0c 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 7"},
-				"0e 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 8"},
-				"0f 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 9"},
-				"11 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 11"},
-				"13 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 12"},
-				"15 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 13"},
-				"16 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 14"},
-				"18 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 15"},
-				"1a 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 16"}
-			}
+			"00 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 10"},
+			"01 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 1"},
+			"03 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 2"},
+			"05 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 3"},
+			"07 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 4"},
+			"08 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 5"},
+			"0a 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 6"},
+			"0c 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 7"},
+			"0e 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 8"},
+			"0f 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 9"},
+			"11 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 11"},
+			"13 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 12"},
+			"15 00": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 13"},
+			"16 60": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 14"},
+			"18 40": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 15"},
+			"1a 20": {"_content": {"$ref": "#/DumpPatchPart"}, "name": "Part 16"}
 		},
 		"00 1d 10": {"name": "Patch Extension Common", "size": 128, "type": "nibbled8bitBE", "_isIndividual": false},
 		"00 1e 10": {
 			"name": "Patch Extension Part",
-			"_content": {
-				"00 00": {"name": "Part 10", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"00 40": {"name": "Part 1", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"01 00": {"name": "Part 2", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"01 40": {"name": "Part 3", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"02 00": {"name": "Part 4", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"02 40": {"name": "Part 5", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"03 00": {"name": "Part 6", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"03 40": {"name": "Part 7", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"04 00": {"name": "Part 8", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"04 40": {"name": "Part 9", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"05 00": {"name": "Part 11", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"05 40": {"name": "Part 12", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"06 00": {"name": "Part 13", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"06 40": {"name": "Part 14", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"07 00": {"name": "Part 15", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
-				"07 40": {"name": "Part 16", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false}
-			}
+			"00 00": {"name": "Part 10", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"00 40": {"name": "Part 1", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"01 00": {"name": "Part 2", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"01 40": {"name": "Part 3", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"02 00": {"name": "Part 4", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"02 40": {"name": "Part 5", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"03 00": {"name": "Part 6", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"03 40": {"name": "Part 7", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"04 00": {"name": "Part 8", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"04 40": {"name": "Part 9", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"05 00": {"name": "Part 11", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"05 40": {"name": "Part 12", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"06 00": {"name": "Part 13", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"06 40": {"name": "Part 14", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"07 00": {"name": "Part 15", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false},
+			"07 40": {"name": "Part 16", "size": 64, "type": "nibbled8bitBE", "_isIndividual": false}
 		},
 
 		"01 00 00": {
 			"name": "Drum Setup",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/DumpDrumSetup"}, "name": "Drum Map 1"},
-				"10 00": {"_content": {"$ref": "#/DumpDrumSetup"}, "name": "Drum Map 2"}
-			}
+			"00 00": {"_content": {"$ref": "#/DumpDrumSetup"}, "name": "Drum Map 1"},
+			"10 00": {"_content": {"$ref": "#/DumpDrumSetup"}, "name": "Drum Map 2"}
 		}
 	},
 

@@ -2,44 +2,38 @@
 	"_idKeys": ["41 56"],
 	"_addrCarries": [false, false, true],
 
-	"_content": {
-		"00 00 00": {
-			"name": "System",
-			"_content": {
-				"00": {"name": "Reverb Character", "table": ["Room 1", "Room 2", "Room 3", "Hall 1", "Hall 2", "Plate", "Delay", "Panning Delay"]},
-				"01": {"name": "Reverb Level"},
-				"02": {"name": "Reverb Time"},
-				"03": {"name": "Delay Time"},
-				"04": {"name": "Delay Feedback"},
-				"05": {"name": "Chorus Level"},
-				"06": {"name": "Chorus Feedback"},
-				"07": {"name": "Chorus Delay"},
-				"08": {"name": "Chorus Rate"},
-				"09": {"name": "Chorus Depth"}
-			}
-		},
+	"00 00 00": {
+		"name": "System",
+		"00": {"name": "Reverb Character", "table": ["Room 1", "Room 2", "Room 3", "Hall 1", "Hall 2", "Plate", "Delay", "Panning Delay"]},
+		"01": {"name": "Reverb Level"},
+		"02": {"name": "Reverb Time"},
+		"03": {"name": "Delay Time"},
+		"04": {"name": "Delay Feedback"},
+		"05": {"name": "Chorus Level"},
+		"06": {"name": "Chorus Feedback"},
+		"07": {"name": "Chorus Delay"},
+		"08": {"name": "Chorus Rate"},
+		"09": {"name": "Chorus Depth"}
+	},
 
-		"01 00 00": {
-			"name": "Patch",
-			"_content": {
-				"00 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 10"},
-				"01 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 1"},
-				"02 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 2"},
-				"03 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 3"},
-				"04 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 4"},
-				"05 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 5"},
-				"06 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 6"},
-				"07 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 7"},
-				"08 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 8"},
-				"09 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 9"},
-				"0a 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 11"},
-				"0b 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 12"},
-				"0c 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 13"},
-				"0d 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 14"},
-				"0e 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 15"},
-				"0f 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 16"}
-			}
-		}
+	"01 00 00": {
+		"name": "Patch",
+		"00 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 10"},
+		"01 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 1"},
+		"02 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 2"},
+		"03 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 3"},
+		"04 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 4"},
+		"05 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 5"},
+		"06 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 6"},
+		"07 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 7"},
+		"08 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 8"},
+		"09 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 9"},
+		"0a 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/PatchPart"}, "name": "Part 16"}
 	},
 
 	"PatchPart": {

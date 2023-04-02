@@ -2,76 +2,68 @@
 	"_idKeys": ["41 45"],
 	"_addrCarries": [false, false, true],
 
-	"_content": {
-		"10 00 00": {"name": "Displayed Letter", "size": 32, "_isVarLen": true, "format": "asciiA"},
-		"10 01 00": {
-			"name": "Displayed Dot Data",
-			"_content": {
-				"00 00": {"size": 64, "format": "hex"},
-				"00 40": {"name": "Page 2", "size": 64, "format": "hex"},
-				"01 00": {"name": "Page 3", "size": 64, "format": "hex"},
-				"01 40": {"name": "Page 4", "size": 64, "format": "hex"},
-				"02 00": {"name": "Page 5", "size": 64, "format": "hex"},
-				"02 40": {"name": "Page 6", "size": 64, "format": "hex"},
-				"03 00": {"name": "Page 7", "size": 64, "format": "hex"},
-				"03 40": {"name": "Page 8", "size": 64, "format": "hex"},
-				"04 00": {"name": "Page 9", "size": 64, "format": "hex"},
-				"04 40": {"name": "Page 10", "size": 64, "format": "hex"}
-			}
-		},
+	"10 00 00": {"name": "Displayed Letter", "size": 32, "_isVarLen": true, "format": "asciiA"},
+	"10 01 00": {
+		"name": "Displayed Dot Data",
+		"00 00": {"size": 64, "format": "hex"},
+		"00 40": {"name": "Page 2", "size": 64, "format": "hex"},
+		"01 00": {"name": "Page 3", "size": 64, "format": "hex"},
+		"01 40": {"name": "Page 4", "size": 64, "format": "hex"},
+		"02 00": {"name": "Page 5", "size": 64, "format": "hex"},
+		"02 40": {"name": "Page 6", "size": 64, "format": "hex"},
+		"03 00": {"name": "Page 7", "size": 64, "format": "hex"},
+		"03 40": {"name": "Page 8", "size": 64, "format": "hex"},
+		"04 00": {"name": "Page 9", "size": 64, "format": "hex"},
+		"04 40": {"name": "Page 10", "size": 64, "format": "hex"}
+	},
 
-		"10 08 00": {"name": "Display Type", "table": ["Type 1", "Type 2", "Type 3", "Type 4", "Type 5", "Type 6", "Type 7", "Type 8"]},
-		"10 08 01": {"name": "Peak Hold Type", "table": ["Off", "Type 1", "Type 2", "Type 3"]},
-		"10 08 10": {"name": "Displayed Parameter", "table": ["Standard", "Level", "Pan", "Reverb", "Chorus", "K.Shift", "MIDI Ch"]},
+	"10 08 00": {"name": "Display Type", "table": ["Type 1", "Type 2", "Type 3", "Type 4", "Type 5", "Type 6", "Type 7", "Type 8"]},
+	"10 08 01": {"name": "Peak Hold Type", "table": ["Off", "Type 1", "Type 2", "Type 3"]},
+	"10 08 10": {"name": "Displayed Parameter", "table": ["Standard", "Level", "Pan", "Reverb", "Chorus", "K.Shift", "MIDI Ch"]},
 
-		"10 10 00": {"name": "Select Block (Part Select)", "table": ["Part 10", "Part 1", "Part 2", "Part 3", "Part 4", "Part 5", "Part 6", "Part 7", "Part 8", "Part 9", "Part 11", "Part 12", "Part 13", "Part 14", "Part 15", "Part 16", "All"]},
-		"10 10 01": {"name": "Minus One", "format": "onOff1"},
-		"10 10 02": {"name": "Solo (Part Monitor)", "format": "onOff1"},
-		"10 11 00": {"name": "All Mute", "format": "onOff1"},
-		"10 11 10": {
-			"_content": {
-				"00": {"name": "Block 00 Mute (Part 10 Mute)", "format": "onOff1"},
-				"01": {"name": "Block 01 Mute (Part 1 Mute)", "format": "onOff1"},
-				"02": {"name": "Block 02 Mute (Part 2 Mute)", "format": "onOff1"},
-				"03": {"name": "Block 03 Mute (Part 3 Mute)", "format": "onOff1"},
-				"04": {"name": "Block 04 Mute (Part 4 Mute)", "format": "onOff1"},
-				"05": {"name": "Block 05 Mute (Part 5 Mute)", "format": "onOff1"},
-				"06": {"name": "Block 06 Mute (Part 6 Mute)", "format": "onOff1"},
-				"07": {"name": "Block 07 Mute (Part 7 Mute)", "format": "onOff1"},
-				"08": {"name": "Block 08 Mute (Part 8 Mute)", "format": "onOff1"},
-				"09": {"name": "Block 09 Mute (Part 9 Mute)", "format": "onOff1"},
-				"0a": {"name": "Block 0A Mute (Part 11 Mute)", "format": "onOff1"},
-				"0b": {"name": "Block 0B Mute (Part 12 Mute)", "format": "onOff1"},
-				"0c": {"name": "Block 0C Mute (Part 13 Mute)", "format": "onOff1"},
-				"0d": {"name": "Block 0D Mute (Part 14 Mute)", "format": "onOff1"},
-				"0e": {"name": "Block 0E Mute (Part 15 Mute)", "format": "onOff1"},
-				"0f": {"name": "Block 0F Mute (Part 16 Mute)", "format": "onOff1"}
-			}
-		},
+	"10 10 00": {"name": "Select Block (Part Select)", "table": ["Part 10", "Part 1", "Part 2", "Part 3", "Part 4", "Part 5", "Part 6", "Part 7", "Part 8", "Part 9", "Part 11", "Part 12", "Part 13", "Part 14", "Part 15", "Part 16", "All"]},
+	"10 10 01": {"name": "Minus One", "format": "onOff1"},
+	"10 10 02": {"name": "Solo (Part Monitor)", "format": "onOff1"},
+	"10 11 00": {"name": "All Mute", "format": "onOff1"},
+	"10 11 10": {
+		"00": {"name": "Block 00 Mute (Part 10 Mute)", "format": "onOff1"},
+		"01": {"name": "Block 01 Mute (Part 1 Mute)", "format": "onOff1"},
+		"02": {"name": "Block 02 Mute (Part 2 Mute)", "format": "onOff1"},
+		"03": {"name": "Block 03 Mute (Part 3 Mute)", "format": "onOff1"},
+		"04": {"name": "Block 04 Mute (Part 4 Mute)", "format": "onOff1"},
+		"05": {"name": "Block 05 Mute (Part 5 Mute)", "format": "onOff1"},
+		"06": {"name": "Block 06 Mute (Part 6 Mute)", "format": "onOff1"},
+		"07": {"name": "Block 07 Mute (Part 7 Mute)", "format": "onOff1"},
+		"08": {"name": "Block 08 Mute (Part 8 Mute)", "format": "onOff1"},
+		"09": {"name": "Block 09 Mute (Part 9 Mute)", "format": "onOff1"},
+		"0a": {"name": "Block 0A Mute (Part 11 Mute)", "format": "onOff1"},
+		"0b": {"name": "Block 0B Mute (Part 12 Mute)", "format": "onOff1"},
+		"0c": {"name": "Block 0C Mute (Part 13 Mute)", "format": "onOff1"},
+		"0d": {"name": "Block 0D Mute (Part 14 Mute)", "format": "onOff1"},
+		"0e": {"name": "Block 0E Mute (Part 15 Mute)", "format": "onOff1"},
+		"0f": {"name": "Block 0F Mute (Part 16 Mute)", "format": "onOff1"}
+	},
 
-		"10 20 00": {"name": "Display Page", "table": ["Bar Display", "Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7", "Page 8", "Page 9", "Page 10"]},
-		"10 20 01": {"name": "Display Time", "unit": "sec", "resolution": 0.48},
+	"10 20 00": {"name": "Display Page", "table": ["Bar Display", "Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7", "Page 8", "Page 9", "Page 10"]},
+	"10 20 01": {"name": "Display Time", "unit": "sec", "resolution": 0.48},
 
-		"20 00 00": {
-			"name": "LCD Full Graphics",
-			"_content": {
-				"00 00": {"name": "Line 1-4", "size": 108, "format": "hex"},
-				"01 00": {"name": "Line 5-8", "size": 108, "format": "hex"},
-				"02 00": {"name": "Line 9-12", "size": 108, "format": "hex"},
-				"03 00": {"name": "Line 13-16", "size": 108, "format": "hex"},
-				"04 00": {"name": "Line 17-20", "size": 108, "format": "hex"},
-				"05 00": {"name": "Line 21-24", "size": 108, "format": "hex"},
-				"06 00": {"name": "Line 25-28", "size": 108, "format": "hex"},
-				"07 00": {"name": "Line 29-32", "size": 108, "format": "hex"},
-				"08 00": {"name": "Line 33-36", "size": 108, "format": "hex"},
-				"09 00": {"name": "Line 37-40", "size": 108, "format": "hex"},
-				"0a 00": {"name": "Line 41-44", "size": 108, "format": "hex"},
-				"0b 00": {"name": "Line 45-48", "size": 108, "format": "hex"},
-				"0c 00": {"name": "Line 49-52", "size": 108, "format": "hex"},
-				"0d 00": {"name": "Line 51-56", "size": 108, "format": "hex"},
-				"0e 00": {"name": "Line 57-60", "size": 108, "format": "hex"},
-				"0f 00": {"name": "Line 61-64 (to Display)", "size": 108, "format": "hex"}
-			}
-		}
+	"20 00 00": {
+		"name": "LCD Full Graphics",
+		"00 00": {"name": "Line 1-4", "size": 108, "format": "hex"},
+		"01 00": {"name": "Line 5-8", "size": 108, "format": "hex"},
+		"02 00": {"name": "Line 9-12", "size": 108, "format": "hex"},
+		"03 00": {"name": "Line 13-16", "size": 108, "format": "hex"},
+		"04 00": {"name": "Line 17-20", "size": 108, "format": "hex"},
+		"05 00": {"name": "Line 21-24", "size": 108, "format": "hex"},
+		"06 00": {"name": "Line 25-28", "size": 108, "format": "hex"},
+		"07 00": {"name": "Line 29-32", "size": 108, "format": "hex"},
+		"08 00": {"name": "Line 33-36", "size": 108, "format": "hex"},
+		"09 00": {"name": "Line 37-40", "size": 108, "format": "hex"},
+		"0a 00": {"name": "Line 41-44", "size": 108, "format": "hex"},
+		"0b 00": {"name": "Line 45-48", "size": 108, "format": "hex"},
+		"0c 00": {"name": "Line 49-52", "size": 108, "format": "hex"},
+		"0d 00": {"name": "Line 51-56", "size": 108, "format": "hex"},
+		"0e 00": {"name": "Line 57-60", "size": 108, "format": "hex"},
+		"0f 00": {"name": "Line 61-64 (to Display)", "size": 108, "format": "hex"}
 	}
 }
