@@ -1356,7 +1356,7 @@
 	"DumpPatchPart": {
 		"00 00": {"name": "Bank Select", "size": 2, "type": "nibbled8bitBE"},
 		"00 02": {"name": "Program Change", "size": 2, "type": "nibbled8bitBE"},
-		"00 04": {"name": "Rx. NRPN/PB/CAf/PC/PAf/Note/Soft", "size": 2, "type": "nibbled8bitBE", "format": "hex"},
+		"00 04": {"name": "Rx. NRPN/PB/CAf/PC/CC/PAf/Note/Soft", "size": 2, "type": "nibbled8bitBE", "format": "hex"},
 		"00 06": {"name": "Rx. Sos/Por/Hold/Exp/Pan/Vol/Mod/RPN", "size": 2, "type": "nibbled8bitBE", "format": "hex"},
 		"00 08": {"name": "Rx. Channel", "size": 2, "type": "nibbled8bitBE", "table": {"$ref": "#/tableRxChannel"}},
 		"00 0a": {"name": "Mono/Poly, Assign, Rhythm", "size": 2, "type": "nibbled8bitBE", "format": "hex"},
