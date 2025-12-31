@@ -1304,7 +1304,7 @@
 			"1c": {"name": "Part 15", "size": 2, "type": "nibbled8bitBE"},
 			"1e": {"name": "Part 16", "size": 2, "type": "nibbled8bitBE"}
 		},
-		"40": {"name": "(Unknown)", "size": 2, "type": "nibbled8bitBE"},
+		"40": {"name": "Assigner Separate Wall", "size": 2, "type": "nibbled8bitBE"},
 		"42": {"name": "(Unknown)", "size": 2, "type": "nibbled8bitBE"},
 		"44": {"name": "Reverb Macro", "size": 2, "type": "nibbled8bitBE", "table": {"$ref": "#/tableReverbMacro"}},
 		"46": {"name": "Reverb Character", "size": 2, "type": "nibbled8bitBE", "table": {"$ref": "#/tableReverbMacro"}},
