@@ -348,19 +348,55 @@
 	"10 00 00": {
 		"name": "A/D Part",
 		"00 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 1"},
-		"01 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 2"}
+		"01 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 2"},
+		"02 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 3"},
+		"03 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 4"},
+		"04 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 5"},
+		"05 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 6"},
+		"06 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 7"},
+		"07 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 8"},
+		"08 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 9"},
+		"09 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 10"},
+		"0a 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/ADPart"}, "name": "Part 14"}
 	},
 
 	"11 00 00": {
 		"name": "A/D System",
 		"00 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 1"},
-		"01 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 2"}
+		"01 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 2"},
+		"02 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 3"},
+		"03 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 4"},
+		"04 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 5"},
+		"05 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 6"},
+		"06 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 7"},
+		"07 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 8"},
+		"08 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 9"},
+		"09 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 10"},
+		"0a 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/ADPartConfiguration"}, "name": "Part 14"}
 	},
 
 	"12 00 00": {
 		"name": "A/D Part",
 		"00 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 1"},
-		"01 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 2"}
+		"01 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 2"},
+		"02 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 3"},
+		"03 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 4"},
+		"04 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 5"},
+		"05 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 6"},
+		"06 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 7"},
+		"07 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 8"},
+		"08 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 9"},
+		"09 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 10"},
+		"0a 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/ADPartAdditional"}, "name": "Part 14"}
 	},
 
 	"30 00 00": {
