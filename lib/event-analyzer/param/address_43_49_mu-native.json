@@ -1,0 +1,73 @@
+{
+	"_idKeys": ["43 49"],
+	"_addrCarries": [false, false, false],
+
+	"00 00 00": {
+		"name": "MU System",
+		"00": {"name": "Mute Lock", "format": "onOff1"},
+		"01": {"name": "AD Lock", "format": "onOff1"},
+		"02": {"name": "EQ Lock", "format": "onOff1"},
+		"03": {"name": "Receive GM On", "format": "onOff1"},
+		"04": {"name": "Receive Bank Select", "format": "onOff1"},
+		"05": {"name": "Bulk Out Interval Time", "unit": "ms", "table": ["50", "100", "150", "200", "300"]},
+		"06": {"name": "Performance Channel"},
+		"07": {"name": "Performance Note Shift", "format": "excess64", "unit": "semitone"},
+		"08": {"name": "LCD Contrast"},
+		"09": {"name": "Multi Port Number for MIDI Out", "table": ["Port 1", "Port 2", "Port 3", "Port 4", "Port 5", "Port 6", "Port 7", "Port 8"]},
+
+		"10": {"name": "Drum Edit Rcv Note", "format": "onOff1"},
+
+		"11": {"name": "Output Select Lock", "format": "onOff1"},
+
+		"12": {"name": "Voice Map", "table": ["MU Basic", "MU100 Native"]},
+
+		"14": {"name": "Output"},
+		"15": {"name": "Digital Output Gain"}
+	},
+
+	"01 00 00": {
+		"name": "DB60XG System",
+		"00": {"name": "(Not Used)"},
+		"01": {"name": "Karaoke Lock", "format": "onOff1"}
+	},
+
+	"0a 00 00": {
+		"name": "Remote Switch",
+		"00": {"name": "PLAY Switch", "format": "onOff1"},
+		"01": {"name": "UTIL Switch", "format": "onOff1"},
+		"02": {"name": "MODE Switch", "format": "onOff1"},
+		"03": {"name": "EDIT Switch", "format": "onOff1"},
+		"04": {"name": "EFFECT Switch", "format": "onOff1"},
+		"05": {"name": "EQ Switch", "format": "onOff1"},
+		"06": {"name": "MUTE/SOLO Switch", "format": "onOff1"},
+		"07": {"name": "ENTER Switch", "format": "onOff1"},
+		"08": {"name": "EXIT Switch", "format": "onOff1"},
+		"09": {"name": "PART- Switch", "format": "onOff1"},
+		"0a": {"name": "SELECT- Switch", "format": "onOff1"},
+		"0b": {"name": "VALUE- Switch", "format": "onOff1"},
+		"0c": {"name": "PART+ Switch", "format": "onOff1"},
+		"0d": {"name": "SELECT+ Switch", "format": "onOff1"},
+		"0e": {"name": "VALUE+ Switch", "format": "onOff1"},
+
+		"10": {"name": "Piano Switch", "format": "onOff1"},
+		"11": {"name": "Chrom. perc. Switch", "format": "onOff1"},
+		"12": {"name": "Organ Switch", "format": "onOff1"},
+		"13": {"name": "Guitar Switch", "format": "onOff1"},
+		"14": {"name": "Bass Switch", "format": "onOff1"},
+		"15": {"name": "Strings Switch", "format": "onOff1"},
+		"16": {"name": "Ensemble Switch", "format": "onOff1"},
+		"17": {"name": "Brass Switch", "format": "onOff1"},
+		"18": {"name": "Reed Switch", "format": "onOff1"},
+		"19": {"name": "Pipe Switch", "format": "onOff1"},
+		"1a": {"name": "Synth lead Switch", "format": "onOff1"},
+		"1b": {"name": "Synth pad Switch", "format": "onOff1"},
+		"1c": {"name": "Synth effects Switch", "format": "onOff1"},
+		"1d": {"name": "Ethnic Switch", "format": "onOff1"},
+		"1e": {"name": "Percussive Switch", "format": "onOff1"},
+		"1f": {"name": "SFX Switch", "format": "onOff1"},
+		"20": {"name": "Model excl. Switch", "format": "onOff1"},
+		"21": {"name": "Drum Switch", "format": "onOff1"},
+		"22": {"name": "SELECT Switch", "format": "onOff1"},
+		"23": {"name": "AUDITION Switch", "format": "onOff1"}
+	}
+}
