@@ -1,0 +1,75 @@
+{
+	"_idKeys": ["43 62"],
+	"_addrCarries": [false, false, false],
+
+	"00 00 00": {
+		"name": "System",
+		"07": {"name": "(Not Used)"},
+		"08": {"name": "Velocity Curve", "table": ["DX", "Normal", "Soft 1", "Soft 2", "Easy", "Wide", "Hard"]},
+		"09": {"name": "(Not Used)"},
+		"0a": {"name": "(Not Used)"},
+		"0b": {"name": "(Not Used)"},
+		"0c": {"name": "(Not Used)"},
+		"0d": {"name": "(Not Used)"},
+		"0e": {"name": "32 Bulk Receive Block", "table": ["1-32", "33-64"]},
+		"0f": {"name": "(Not Used)"}
+	},
+
+	"60 00 00": {
+		"name": "DX Native Part",
+		"00 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 1"},
+		"01 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 2"},
+		"02 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 3"},
+		"03 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 4"},
+		"04 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 5"},
+		"05 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 6"},
+		"06 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 7"},
+		"07 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 8"},
+		"08 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 9"},
+		"09 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 10"},
+		"0a 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 11"},
+		"0b 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 12"},
+		"0c 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 13"},
+		"0d 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 14"},
+		"0e 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 15"},
+		"0f 00": {"_content": {"$ref": "#/DXNativePart"}, "name": "Part 16"}
+	},
+
+	"DXNativePart": {
+		"00": {"name": "AC4 Controller", "table": ["Off", "Mod", "BC", "FC", "Exp", "CAT", "PB"]},
+		"01": {"name": "AC4 Parameter Select", "table": ["No Assign", "EG Bias"]},
+		"02": {"name": "(Not Used)"},
+		"03": {"name": "(Not Used)"},
+		"04": {"name": "(Not Used)"},
+		"05": {"name": "AC4 Parameter Depth", "format": "excess64"},
+		"06": {"name": "(Not Used)"},
+		"07": {"name": "(Not Used)"},
+		"08": {"name": "(Not Used)"},
+		"09": {"name": "(Not Used)"},
+		"0a": {"name": "(Not Used)"},
+		"0b": {"name": "Carrier Level 1", "format": "excess64"},
+		"0c": {"name": "Carrier Level 2", "format": "excess64"},
+		"0d": {"name": "Carrier Level 3", "format": "excess64"},
+		"0e": {"name": "Carrier Level 4", "format": "excess64"},
+		"0f": {"name": "Carrier Level 5", "format": "excess64"},
+		"10": {"name": "Carrier Level 6", "format": "excess64"},
+		"11": {"name": "(Not Used)"},
+		"12": {"name": "(Not Used)"},
+		"13": {"name": "Modulator Level 1", "format": "excess64"},
+		"14": {"name": "Modulator Level 2", "format": "excess64"},
+		"15": {"name": "Modulator Level 3", "format": "excess64"},
+		"16": {"name": "Modulator Level 4", "format": "excess64"},
+		"17": {"name": "Modulator Level 5", "format": "excess64"},
+		"18": {"name": "Modulator Level 6", "format": "excess64"},
+		"19": {"name": "(Not Used)"},
+		"1a": {"name": "(Not Used)"},
+		"1b": {"name": "FeedBack Level", "format": "excess64"},
+
+		"1c": {"name": "Portamento Mode", "table": ["Retain/Fingered", "Follow/Fulltime"]},
+		"1d": {"name": "Portamento Step"},
+		"1e": {"name": "Pitch Bend Step"},
+		"1f": {"name": "(Not Used)"},
+
+		"20": {"name": "Rcv DX SysEx", "format": "onOff1"}
+	}
+}
