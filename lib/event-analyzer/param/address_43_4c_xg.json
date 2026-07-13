@@ -845,7 +845,7 @@
 		"00": {"name": "Pitch Coarse", "format": "excess64"},
 		"01": {"name": "Pitch Fine", "format": "excess64", "unit": "cent"},
 		"02": {"name": "Level"},
-		"03": {"name": "Alternate Group"},
+		"03": {"name": "Alternate Group", "table": ["Off"]},
 		"04": {"name": "Pan", "format": "panpotR"},
 		"05": {"name": "Reverb Send"},
 		"06": {"name": "Chorus Send"},

@@ -766,7 +766,7 @@
 		"00 00": {"name": "Drum Set Name", "size": 12, "_isVarLen": true, "format": "asciiA"},
 		"01 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Play Note Number"},
 		"02 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Level"},
-		"03 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Assign Group Number"},
+		"03 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Assign Group Number", "table": ["None"]},
 		"04 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Panpot", "format": "panpotR"},
 		"05 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Reverb Send Level"},
 		"06 00": {"_content": {"$ref": "#/DrumNotes"}, "name": "Chorus Send Level"},
@@ -1537,7 +1537,7 @@
 	"DumpDrumSetup": {
 		"00 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Play Note Number"},
 		"02 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Level"},
-		"04 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Assign Group Number"},
+		"04 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Assign Group Number", "table": ["None"]},
 		"06 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Panpot", "format": "panpotR"},
 		"08 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Reverb Depth"},
 		"0a 00": {"_content": {"$ref": "#/NibbledDrumNotes"}, "name": "Chorus Depth"},
