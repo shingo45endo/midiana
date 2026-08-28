@@ -511,9 +511,9 @@
 
 		"0f": {"name": "Note Shift", "format": "excess64", "unit": "semitone"},
 		"10": {"name": "Detune", "format": "excess64", "unit": "cent"},
-		"11": {"name": "Pitch Scaling", "table": ["100%", "50%", "20%", "10%", "5%", "0%"]},
+		"11": {"name": "Pitch Scaling", "unit": "%", "table": ["100", "50", "20", "10", "5", "0"]},
 		"12": {"name": "Pitch Scaling Center Note", "format": "noteNo"},
-		"13": {"name": "PEG Depth", "table": ["0.5", "1", "2", "4"], "unit": "octave"},
+		"13": {"name": "PEG Depth", "unit": "octave", "table": ["1/2", "1", "2", "4"]},
 		"14": {"name": "Velocity PEG Level Sensibility", "format": "excess64"},
 		"15": {"name": "Velocity PEG Rate Sensibility", "format": "excess64"},
 		"16": {"name": "PEG Rate Scaling", "format": "excess64"},

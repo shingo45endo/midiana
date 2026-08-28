@@ -477,7 +477,7 @@
 		"14": {"name": "LFO Pitch Mod Depth"},
 		"15": {"name": "LFO Amp Mod Depth"},
 		"16": {"name": "Pitch LFO Wave", "table": ["Tri", "S&H"]},
-		"17": {"name": "PEG Range", "table": ["1/2", "1", "2"], "unit": "octave"},
+		"17": {"name": "PEG Depth", "unit": "octave", "table": ["1/2", "1", "2", "4"]},
 		"18": {"name": "PEG Velocity Switch", "table": ["On", "Off"]},
 		"19": {"name": "PEG Rate Scaling"},
 		"1a": {"name": "PEG Rate 1"},
