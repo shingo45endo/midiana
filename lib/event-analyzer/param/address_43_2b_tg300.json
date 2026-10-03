@@ -398,7 +398,7 @@
 	},
 
 	"DrumNoteSetup": {
-		"00": {"name": "Pitch Course"},
+		"00": {"name": "Pitch Coarse"},
 		"01": {"name": "Pitch Fine", "format": "excess64", "unit": "cent"},
 		"02": {"name": "Level"},
 		"03": {"name": "Alternate Group", "table": ["Off"]},
@@ -514,8 +514,8 @@
 		"11": {"name": "Pitch Scaling", "unit": "%", "table": ["100", "50", "20", "10", "5", "0"]},
 		"12": {"name": "Pitch Scaling Center Note", "format": "noteNo"},
 		"13": {"name": "PEG Depth", "unit": "octave", "table": ["1/2", "1", "2", "4"]},
-		"14": {"name": "Velocity PEG Level Sensibility", "format": "excess64"},
-		"15": {"name": "Velocity PEG Rate Sensibility", "format": "excess64"},
+		"14": {"name": "Velocity PEG Level Sensitivity", "format": "excess64"},
+		"15": {"name": "Velocity PEG Rate Sensitivity", "format": "excess64"},
 		"16": {"name": "PEG Rate Scaling", "format": "excess64"},
 		"17": {"name": "PEG Rate Scaling Center Note", "format": "noteNo"},
 		"18": {"name": "PEG Rate 1"},
@@ -540,8 +540,8 @@
 		"2a": {"name": "Cutoff Scaling Offset 3", "format": "excess64"},
 		"2b": {"name": "Cutoff Scaling Offset 4", "format": "excess64"},
 
-		"2c": {"name": "Velocity FEG Level Sensibility", "format": "excess64"},
-		"2d": {"name": "Velocity FEG Rate Sensibility", "format": "excess64"},
+		"2c": {"name": "Velocity FEG Level Sensitivity", "format": "excess64"},
+		"2d": {"name": "Velocity FEG Rate Sensitivity", "format": "excess64"},
 		"2e": {"name": "FEG Rate Scaling", "format": "excess64"},
 		"2f": {"name": "FEG Rate Scaling Center Note", "format": "noteNo"},
 		"30": {"name": "FEG Rate 1"},

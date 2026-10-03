@@ -572,7 +572,7 @@
 		"00": {"name": "Voice Name", "size": 8, "format": "asciiA"},
 		"09": {"name": "Voice Level"},
 		"0a": {"name": "Assign Mode", "table": ["Bottom", "Top", "Last"]},
-		"0b": {"name": "(Not Used)", "size": 45},
+		"0b": {"name": "(Not Used)", "size": 44},
 		"37": {"name": "Amp Level Scale Break Point", "format": "noteNo"},
 		"38": {"name": "Amp Level Scale Depth", "format": "excess64"},
 		"39": {"name": "Filter Cutoff Scale Break Point", "format": "noteNo"},
