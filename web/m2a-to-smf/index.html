@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M2A to SMF Converter</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script type="module">
+import {convertM2aToSmfs, defaultSettings} from '../../tools/m2a-to-smf/m2a_converter.js';
+
+const elemFile        = document.getElementById('my-file');
+const elemDeviceNo    = document.getElementById('my-deviceNo');
+const elemIsInitSent  = document.getElementById('my-isInitSent');
+const elemInitWait    = document.getElementById('my-initWait');
+const elemBytesPerSec = document.getElementById('my-bytesPerSec');
+const elemResults     = document.getElementById('my-results');
+const elemLogs        = document.getElementById('my-logs');
+
+elemDeviceNo.value    = defaultSettings.deviceNo;
+elemIsInitSent.checked = defaultSettings.isInitSent;
+elemInitWait.value    = defaultSettings.initWait;
+elemBytesPerSec.value = defaultSettings.bytesPerSec;
+
+const objectUrls = [];
+
+document.getElementById('my-convert').addEventListener('click', async () => {
+	for (const url of objectUrls.splice(0)) {
+		URL.revokeObjectURL(url);
+	}
+	elemResults.replaceChildren();
+	elemLogs.replaceChildren();
+
+	const [file] = elemFile.files;
+	if (!file) {
+		addLog('Select an M2A file.');
+		return;
+	}
+
+	const settings = {
+		...defaultSettings,
+		deviceNo:    Number(elemDeviceNo.value),
+		isInitSent:  elemIsInitSent.checked,
+		initWait:    Number(elemInitWait.value),
+		bytesPerSec: Number(elemBytesPerSec.value),
+	};
+
+	try {
+		const logs = [];
+		const {samplingSmf, songSmf, combinedSmf} = convertM2aToSmfs(new Uint8Array(await file.arrayBuffer()), settings, logs);
+		for (const log of logs) {
+			addLog(log.message);
+		}
+
+		const name = file.name.replace(/\.[^.]*$/u, '');
+		addResult(`${name}_samples.mid`, samplingSmf, 'Sends the sampling data by SysEx');
+		addResult(`${name}_song.mid`, songSmf, 'The song in the M2A file');
+		addResult(`${name}.mid`, combinedSmf, 'The sampling data and the song');
+	} catch (e) {
+		addLog(`${e}`);
+	}
+});
+
+function addResult(fileName, smf, description) {
+	const elemItem = document.createElement('li');
+	elemItem.className = 'list-group-item';
+	if (smf) {
+		const url = URL.createObjectURL(new Blob([smf], {type: 'audio/midi'}));
+		objectUrls.push(url);
+		const elemLink = document.createElement('a');
+		elemLink.href = url;
+		elemLink.download = fileName;
+		elemLink.textContent = fileName;
+		elemItem.append(elemLink, ` (${smf.byteLength.toLocaleString('en-US')} bytes): ${description}`);
+	} else {
+		elemItem.append(`${fileName}: Not made. ${description} is not available.`);
+	}
+	elemResults.append(elemItem);
+}
+
+function addLog(message) {
+	const elemItem = document.createElement('li');
+	elemItem.textContent = message;
+	elemLogs.append(elemItem);
+}
+</script>
+</head>
+<body>
+	<main class="container my-3">
+		<h1 class="h4">M2A to SMF Converter</h1>
+		<p>
+			Converts an M2A file (sampling data and song) of the Yamaha MU2000 to Standard MIDI Files.
+			The sampling data is sent to the MU2000 by SysEx.
+		</p>
+
+		<form class="mb-3" onsubmit="return false;">
+			<div class="mb-3">
+				<label for="my-file" class="form-label">M2A file</label>
+				<input id="my-file" type="file" class="form-control" accept=".m2a,.M2A">
+			</div>
+			<div class="row mb-3">
+				<div class="col-sm-3">
+					<label for="my-deviceNo" class="form-label">Device number</label>
+					<input id="my-deviceNo" type="number" class="form-control" min="0" max="15">
+				</div>
+				<div class="col-sm-3">
+					<label for="my-initWait" class="form-label">Wait after initialization (ms)</label>
+					<input id="my-initWait" type="number" class="form-control" min="0" max="60000">
+				</div>
+				<div class="col-sm-3">
+					<label for="my-bytesPerSec" class="form-label">Speed of SysEx (bytes/s)</label>
+					<input id="my-bytesPerSec" type="number" class="form-control" min="100" max="1000000">
+				</div>
+			</div>
+			<div class="form-check mb-3">
+				<input id="my-isInitSent" type="checkbox" class="form-check-input">
+				<label for="my-isInitSent" class="form-check-label">Initialize the sampling data before sending</label>
+			</div>
+			<button id="my-convert" type="button" class="btn btn-primary">Convert</button>
+		</form>
+
+		<ul id="my-results" class="list-group mb-3"></ul>
+		<ul id="my-logs" class="text-danger"></ul>
+	</main>
+</body>
+</html>
