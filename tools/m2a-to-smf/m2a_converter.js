@@ -35,8 +35,10 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 
 	const sysExs = makeSamplingSysExs(m2a, settings, logs);
 	const {events: sysExEvents, endTick} = makeSamplingEvents(sysExs, division, settings);
+	const samplingName = (m2a.samplingNameBytes.length > 0) ? m2a.samplingNameBytes : m2a.titleBytes;
+	const samplingMetaEvents = (samplingName.length > 0) ? [makeMetaEvent(0x03, samplingName)] : [];
 	const samplingSmf = makeSmf(0, division, [makeTrack([
-		...makeHeadEvents([]),
+		...makeHeadEvents(samplingMetaEvents),
 		...sysExEvents,
 		{tick: endTick, bytes: [0xff, 0x2f, 0x00]},
 	])]);
@@ -46,7 +48,7 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 	}
 	const tracks = song.tracks.map((e) => addMidiPortEvents(e));
 	const songSmf = makeSmf(song.format, song.division, tracks);
-	const combinedSmf = makeCombinedSmf(sysExEvents, endTick, {...song, tracks});
+	const combinedSmf = makeCombinedSmf(sysExEvents, endTick, {...song, tracks}, m2a);
 
 	return {samplingSmf, songSmf, combinedSmf};
 }
@@ -67,8 +69,10 @@ function parseM2a(bytes, logs) {
 	const instruments = findChildren(findChild(ycvf, 'lins'), 'ins ').map((e) => parseInstrument(e));
 
 	return {
-		songBytes: findChild(rmid, 'data')?.payload ?? null,
-		title:     getName(rmid),
+		songBytes:         findChild(rmid, 'data')?.payload ?? null,
+		titleBytes:        getInfoBytes(rmid, 'INAM'),
+		copyrightBytes:    getInfoBytes(rmid, 'ICOP'),
+		samplingNameBytes: getInfoBytes(ycvf, 'INAM'),
 		waves,
 		instruments,
 	};
@@ -105,8 +109,17 @@ function findV000(node) {
 }
 
 function getName(node) {
-	const inam = findChild(findChild(node, 'INFO'), 'INAM');
-	return (inam?.content.rawString) ? String.fromCharCode(...inam.content.rawString) : '';
+	return String.fromCharCode(...getInfoBytes(node, 'INAM'));
+}
+
+// Gets a string in the INFO list without the spaces at the end, because the MU2000 pads the names with them.
+function getInfoBytes(node, tag) {
+	const bytes = findChild(findChild(node, 'INFO'), tag)?.content.rawString ?? new Uint8Array();
+	let len = bytes.byteLength;
+	while (len > 0 && bytes[len - 1] === 0x20) {
+		len--;
+	}
+	return bytes.subarray(0, len);
 }
 
 function parseWaves(wvpl, ptbl, logs) {
@@ -478,10 +491,17 @@ function makeHeadEvents(metaEvents) {
 }
 
 // Puts the sampling data before the song. The song starts at the bar after the sampling data.
-function makeCombinedSmf(sysExEvents, endTick, song) {
+function makeCombinedSmf(sysExEvents, endTick, song, m2a) {
 	const [firstTrack, ...otherTracks] = song.tracks;
 	const {headEvents, restTrack, isTempoAtStart} = splitStartEvents(firstTrack);
 
+	// The sequence name and the copyright come from the RIFF INFO when the song does not have them.
+	if (!headEvents.some((e) => (e[1] === 0x03)) && m2a.titleBytes.length > 0) {
+		headEvents.push(makeMetaEvent(0x03, m2a.titleBytes));
+	}
+	if (!headEvents.some((e) => (e[1] === 0x02)) && m2a.copyrightBytes.length > 0) {
+		headEvents.push(makeMetaEvent(0x02, m2a.copyrightBytes));
+	}
 	const headTypes = [0x03, 0x02, 0x54];
 	headEvents.sort((a, b) => headTypes.indexOf(a[1]) - headTypes.indexOf(b[1]));
 
