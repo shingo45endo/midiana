@@ -16,7 +16,7 @@ Options:
   --device-no <0-15>    Device number of the SysEx (default: ${defaultSettings.deviceNo})
   --no-init             Do not initialize the sampling data before sending
   --init-wait <ms>      Wait after the initialization (default: ${defaultSettings.initWait})
-  --bytes-per-sec <n>   Speed to send the SysEx (default: ${defaultSettings.bytesPerSec})
+  --interval <ms>       Interval between the SysEx messages (default: ${defaultSettings.dumpInterval})
   --debug               Enable assertion
   -h, --help            Show this help`;
 
@@ -25,7 +25,7 @@ const {values: argv, positionals} = util.parseArgs({
 		'device-no':     {type: 'string'},
 		'no-init':       {type: 'boolean', default: false},
 		'init-wait':     {type: 'string'},
-		'bytes-per-sec': {type: 'string'},
+		'interval':      {type: 'string'},
 		'debug':         {type: 'boolean', default: false},
 		'help':          {type: 'boolean', short: 'h', default: false},
 	},
@@ -41,10 +41,10 @@ console.assert = (argv.debug) ? assert : () => {/* EMPTY */};
 
 const settings = {
 	...defaultSettings,
-	deviceNo:    toInteger(argv['device-no'], defaultSettings.deviceNo, 0, 15),
-	isInitSent:  !argv['no-init'],
-	initWait:    toInteger(argv['init-wait'], defaultSettings.initWait, 0, 60000),
-	bytesPerSec: toInteger(argv['bytes-per-sec'], defaultSettings.bytesPerSec, 100, 1000000),
+	deviceNo:     toInteger(argv['device-no'], defaultSettings.deviceNo, 0, 15),
+	isInitSent:   !argv['no-init'],
+	initWait:     toInteger(argv['init-wait'], defaultSettings.initWait, 0, 60000),
+	dumpInterval: toInteger(argv.interval, defaultSettings.dumpInterval, 0, 1000),
 };
 
 const [m2aFile, outputDir] = positionals;

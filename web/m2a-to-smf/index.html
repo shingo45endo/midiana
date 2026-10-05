@@ -8,18 +8,18 @@
 <script type="module">
 import {convertM2aToSmfs, defaultSettings} from '../../tools/m2a-to-smf/m2a_converter.js';
 
-const elemFile        = document.getElementById('my-file');
-const elemDeviceNo    = document.getElementById('my-deviceNo');
-const elemIsInitSent  = document.getElementById('my-isInitSent');
-const elemInitWait    = document.getElementById('my-initWait');
-const elemBytesPerSec = document.getElementById('my-bytesPerSec');
-const elemResults     = document.getElementById('my-results');
-const elemLogs        = document.getElementById('my-logs');
+const elemFile         = document.getElementById('my-file');
+const elemDeviceNo     = document.getElementById('my-deviceNo');
+const elemIsInitSent   = document.getElementById('my-isInitSent');
+const elemInitWait     = document.getElementById('my-initWait');
+const elemDumpInterval = document.getElementById('my-dumpInterval');
+const elemResults      = document.getElementById('my-results');
+const elemLogs         = document.getElementById('my-logs');
 
-elemDeviceNo.value    = defaultSettings.deviceNo;
+elemDeviceNo.value     = defaultSettings.deviceNo;
 elemIsInitSent.checked = defaultSettings.isInitSent;
-elemInitWait.value    = defaultSettings.initWait;
-elemBytesPerSec.value = defaultSettings.bytesPerSec;
+elemInitWait.value     = defaultSettings.initWait;
+elemDumpInterval.value = defaultSettings.dumpInterval;
 
 const objectUrls = [];
 
@@ -38,10 +38,10 @@ document.getElementById('my-convert').addEventListener('click', async () => {
 
 	const settings = {
 		...defaultSettings,
-		deviceNo:    Number(elemDeviceNo.value),
-		isInitSent:  elemIsInitSent.checked,
-		initWait:    Number(elemInitWait.value),
-		bytesPerSec: Number(elemBytesPerSec.value),
+		deviceNo:     Number(elemDeviceNo.value),
+		isInitSent:   elemIsInitSent.checked,
+		initWait:     Number(elemInitWait.value),
+		dumpInterval: Number(elemDumpInterval.value),
 	};
 
 	try {
@@ -107,8 +107,8 @@ function addLog(message) {
 					<input id="my-initWait" type="number" class="form-control" min="0" max="60000">
 				</div>
 				<div class="col-sm-3">
-					<label for="my-bytesPerSec" class="form-label">Speed of SysEx (bytes/s)</label>
-					<input id="my-bytesPerSec" type="number" class="form-control" min="100" max="1000000">
+					<label for="my-dumpInterval" class="form-label">Interval of SysEx (ms)</label>
+					<input id="my-dumpInterval" type="number" class="form-control" min="0" max="1000">
 				</div>
 			</div>
 			<div class="form-check mb-3">

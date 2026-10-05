@@ -4,7 +4,7 @@ export const defaultSettings = Object.freeze({
 	deviceNo:     0,
 	isInitSent:   true,
 	initWait:     1000,	// in milliseconds
-	bytesPerSec:  2800,	// A little slower than MIDI (3125 bytes/s) to leave a margin.
+	dumpInterval: 50,	// in milliseconds. The MU2000 cannot ask again for a lost message, so each one gets enough time.
 	songDivision: 480,	// Used only when the file has no song.
 });
 
@@ -13,6 +13,9 @@ const modelIdSampling = 0x68;
 
 // The sampling memory of the MU2000 without the expansion.
 const maxWordNum = 0x100000;
+
+// MIDI sends 3125 bytes per second.
+const microsecPerMidiByte = 320;
 
 const dataTypesVoice = Object.freeze([0x00010002, 0x00010102]);
 const dataTypesKit   = Object.freeze([0x00010000, 0x00010100, 0x00010101]);
@@ -447,12 +450,12 @@ function makeSamplingEvents(sysExs, division, settings) {
 		{tick: 0, bytes: [0xff, 0x21, 0x01, 0x00]},
 		{tick: 0, bytes: [0xff, 0x51, 0x03, (tempo >> 16) & 0xff, (tempo >> 8) & 0xff, tempo & 0xff]},
 	];
-	let tick = 0;
+	let microsec = 0;
 	for (const sysEx of sysExs) {
-		events.push({tick, bytes: [0xf0, ...toVlq(sysEx.bytes.byteLength - 1), ...sysEx.bytes.subarray(1)]});
-		tick += Math.ceil(sysEx.bytes.byteLength * 1000 / settings.bytesPerSec) + sysEx.wait;
+		events.push({tick: Math.ceil(microsec / 1000), bytes: [0xf0, ...toVlq(sysEx.bytes.byteLength - 1), ...sysEx.bytes.subarray(1)]});
+		microsec += Math.max(sysEx.bytes.byteLength * microsecPerMidiByte, settings.dumpInterval * 1000) + sysEx.wait * 1000;
 	}
-	events.push({tick, bytes: [0xff, 0x2f, 0x00]});
+	events.push({tick: Math.ceil(microsec / 1000), bytes: [0xff, 0x2f, 0x00]});
 	return events;
 }
 
