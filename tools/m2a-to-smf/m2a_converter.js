@@ -15,6 +15,9 @@ const modelIdSampling = 0x68;
 // The sampling memory of the MU2000 without the expansion.
 const maxWordNum = 0x100000;
 
+// The MU2000 has no range check for the sample number.
+const maxSampleNum = 512;
+
 // MIDI sends 3125 bytes per second.
 const microsecPerMidiByte = 320;
 
@@ -215,6 +218,11 @@ function makeSamplingSysExs(m2a, settings, logs) {
 	const waves = m2a.waves.filter((e) => e);
 	let wordNum = 0;
 	for (const wave of waves) {
+		if (wave.sampleNo >= maxSampleNum) {
+			logs.push({message: `Wave ${wave.sampleNo} (${wave.name}) has a sample number over ${maxSampleNum - 1}. Skipped.`});
+			wave.isSkipped = true;
+			continue;
+		}
 		if (wave.format?.wFormatTag !== 1 || wave.format.nChannels !== 1 || ![8, 16].includes(wave.format.wBitsPerSample)) {
 			logs.push({message: `Wave ${wave.sampleNo} (${wave.name}) is not 8-bit or 16-bit mono PCM. Skipped.`});
 			wave.isSkipped = true;
