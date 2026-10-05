@@ -36,7 +36,7 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 	const sysExs = makeSamplingSysExs(m2a, settings, logs);
 	const {events: sysExEvents, endTick} = makeSamplingEvents(sysExs, division, settings);
 	const samplingSmf = makeSmf(0, division, [makeTrack([
-		...makeHeadEvents(),
+		...makeHeadEvents([]),
 		...sysExEvents,
 		{tick: endTick, bytes: [0xff, 0x2f, 0x00]},
 	])]);
@@ -466,11 +466,12 @@ function makeSamplingEvents(sysExs, division, settings) {
 	return {events, endTick: barNum * beatsPerBar * division};
 }
 
-// Events at the start of the file: the port, and the tempo and the time signature of the sampling data.
-function makeHeadEvents() {
+// Events at the start of the file: the port, the given meta events, and the tempo and the time signature of the sampling data.
+function makeHeadEvents(metaEvents) {
 	return [
 		{tick: 0, bytes: [0xff, 0x7f, 0x04, 0x43, 0x00, 0x01, 0x00]},	// Port A
 		{tick: 0, bytes: [0xff, 0x21, 0x01, 0x00]},
+		...metaEvents.map((e) => ({tick: 0, bytes: e})),
 		{tick: 0, bytes: makeTempoEvent(samplingTempo)},
 		{tick: 0, bytes: [0xff, 0x58, 0x04, beatsPerBar, 0x02, 0x18, 0x08]},
 	];
@@ -478,18 +479,21 @@ function makeHeadEvents() {
 
 // Puts the sampling data before the song. The song starts at the bar after the sampling data.
 function makeCombinedSmf(sysExEvents, endTick, song) {
-	const tracks = song.tracks.map((track, i) => {
-		if (i === 0) {
-			const events = [...makeHeadEvents(), ...sysExEvents];
-			if (!hasTempoAtStart(track)) {
-				events.push({tick: endTick, bytes: makeTempoEvent(defaultTempo)});
-			}
-			return concatBytes([makeTrack(events, false), delayTrack(track, endTick - events[events.length - 1].tick)]);
-		} else {
-			return delayTrack(track, endTick);
-		}
-	});
-	return makeSmf(song.format, song.division, tracks);
+	const [firstTrack, ...otherTracks] = song.tracks;
+	const {headEvents, restTrack, isTempoAtStart} = splitStartEvents(firstTrack);
+
+	const headTypes = [0x03, 0x02, 0x54];
+	headEvents.sort((a, b) => headTypes.indexOf(a[1]) - headTypes.indexOf(b[1]));
+
+	const events = [...makeHeadEvents(headEvents), ...sysExEvents];
+	if (!isTempoAtStart) {
+		events.push({tick: endTick, bytes: makeTempoEvent(defaultTempo)});
+	}
+	const lastTick = events[events.length - 1].tick;
+	return makeSmf(song.format, song.division, [
+		concatBytes([makeTrack(events, false), delayTrack(restTrack, endTick - lastTick)]),
+		...otherTracks.map((e) => delayTrack(e, endTick)),
+	]);
 }
 
 function parseSmf(bytes, logs) {
@@ -557,29 +561,49 @@ function addMidiPortEvents(track) {
 	return concatBytes(parts);
 }
 
-function hasTempoAtStart(track) {
+// Takes the meta events that must be at the start of the file out of the events at tick 0.
+function splitStartEvents(track) {
+	const headEvents = [];
+	const parts = [];
+	let isTempoAtStart = false;
+	let begin = 0;
+	let status = 0;
 	for (let pos = 0; pos < track.byteLength;) {
 		const [delta, deltaLen] = fromVlq(track, pos);
 		if (delta > 0) {
-			return false;
+			break;
 		}
+		const eventPos = pos;
 		pos += deltaLen;
-		const status = track[pos];
-		if (status === 0xff) {
-			if (track[pos + 1] === 0x51) {
-				return true;
-			}
+		if (track[pos] === 0xff) {
+			const type = track[pos + 1];
 			const [len, lenLen] = fromVlq(track, pos + 2);
-			pos += 2 + lenLen + len;
-		} else if (status === 0xf0 || status === 0xf7) {
+			const endPos = pos + 2 + lenLen + len;
+			if (type === 0x2f) {
+				break;
+			}
+			if ([0x02, 0x03, 0x54].includes(type)) {
+				headEvents.push(track.subarray(pos, endPos));
+				parts.push(track.subarray(begin, eventPos));
+				begin = endPos;
+			} else if (type === 0x51) {
+				isTempoAtStart = true;
+			}
+			pos = endPos;
+		} else if (track[pos] === 0xf0 || track[pos] === 0xf7) {
 			const [len, lenLen] = fromVlq(track, pos + 1);
 			pos += 1 + lenLen + len;
 		} else {
-			// Channel messages at the start of the song come after the tempo, if any.
-			return false;
+			// Channel message, maybe with running status.
+			if ((track[pos] & 0x80) !== 0) {
+				status = track[pos];
+				pos++;
+			}
+			pos += ([0xc0, 0xd0].includes(status & 0xf0)) ? 1 : 2;
 		}
 	}
-	return false;
+	parts.push(track.subarray(begin));
+	return {headEvents, restTrack: concatBytes(parts), isTempoAtStart};
 }
 
 function delayTrack(track, tick) {
