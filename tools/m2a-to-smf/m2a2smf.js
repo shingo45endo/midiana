@@ -17,6 +17,7 @@ Options:
   --no-init             Do not initialize the sampling data before sending
   --init-wait <ms>      Wait after the initialization (default: ${defaultSettings.initWait})
   --interval <ms>       Interval between the SysEx messages (default: ${defaultSettings.dumpInterval})
+  --song-wait <ms>      Wait before the song (default: ${defaultSettings.songWait})
   --debug               Enable assertion
   -h, --help            Show this help`;
 
@@ -26,6 +27,7 @@ const {values: argv, positionals} = util.parseArgs({
 		'no-init':       {type: 'boolean', default: false},
 		'init-wait':     {type: 'string'},
 		'interval':      {type: 'string'},
+		'song-wait':     {type: 'string'},
 		'debug':         {type: 'boolean', default: false},
 		'help':          {type: 'boolean', short: 'h', default: false},
 	},
@@ -45,6 +47,7 @@ const settings = {
 	isInitSent:   !argv['no-init'],
 	initWait:     toInteger(argv['init-wait'], defaultSettings.initWait, 0, 60000),
 	dumpInterval: toInteger(argv.interval, defaultSettings.dumpInterval, 0, 1000),
+	songWait:     toInteger(argv['song-wait'], defaultSettings.songWait, 0, 60000),
 };
 
 const [m2aFile, outputDir] = positionals;

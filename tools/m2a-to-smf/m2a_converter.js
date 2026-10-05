@@ -5,6 +5,7 @@ export const defaultSettings = Object.freeze({
 	isInitSent:   true,
 	initWait:     1000,	// in milliseconds
 	dumpInterval: 50,	// in milliseconds. The MU2000 cannot ask again for a lost message, so each one gets enough time.
+	songWait:     1000,	// in milliseconds. The MU2000 resets its boards at the start of the song.
 	songDivision: 480,	// Used only when the file has no song.
 });
 
@@ -17,6 +18,11 @@ const maxWordNum = 0x100000;
 // MIDI sends 3125 bytes per second.
 const microsecPerMidiByte = 320;
 
+// The sampling data runs at 240 BPM in 4/4, so one bar is one second.
+const samplingTempo = 250000;	// in microseconds per beat
+const beatsPerBar = 4;
+const defaultTempo = 500000;
+
 const dataTypesVoice = Object.freeze([0x00010002, 0x00010102]);
 const dataTypesKit   = Object.freeze([0x00010000, 0x00010100, 0x00010101]);
 
@@ -28,15 +34,19 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 	const division = song?.division ?? settings.songDivision;
 
 	const sysExs = makeSamplingSysExs(m2a, settings, logs);
-	const samplingEvents = makeSamplingEvents(sysExs, division, settings);
-	const samplingSmf = makeSmf(0, division, [makeTrack(samplingEvents)]);
+	const {events: sysExEvents, endTick} = makeSamplingEvents(sysExs, division, settings);
+	const samplingSmf = makeSmf(0, division, [makeTrack([
+		...makeHeadEvents(),
+		...sysExEvents,
+		{tick: endTick, bytes: [0xff, 0x2f, 0x00]},
+	])]);
 
 	if (!song) {
 		return {samplingSmf, songSmf: null, combinedSmf: null};
 	}
 	const tracks = song.tracks.map((e) => addMidiPortEvents(e));
 	const songSmf = makeSmf(song.format, song.division, tracks);
-	const combinedSmf = makeCombinedSmf(samplingEvents, {...song, tracks});
+	const combinedSmf = makeCombinedSmf(sysExEvents, endTick, {...song, tracks});
 
 	return {samplingSmf, songSmf, combinedSmf};
 }
@@ -442,31 +452,37 @@ function makeParamChange(deviceNo, addr, data) {
 	return new Uint8Array([0xf0, 0x43, 0x10 | deviceNo, modelIdSampling, ...addr, ...data, 0xf7]);
 }
 
-// Makes the events of the sampling data. One tick is one millisecond.
+// Makes the SysEx events of the sampling data, and the tick of the bar where the song starts.
 function makeSamplingEvents(sysExs, division, settings) {
-	const tempo = division * 1000;
-	const events = [
-		{tick: 0, bytes: [0xff, 0x7f, 0x04, 0x43, 0x00, 0x01, 0x00]},	// Port A
-		{tick: 0, bytes: [0xff, 0x21, 0x01, 0x00]},
-		{tick: 0, bytes: [0xff, 0x51, 0x03, (tempo >> 16) & 0xff, (tempo >> 8) & 0xff, tempo & 0xff]},
-	];
+	// Counts the time in microseconds and converts it to ticks each time, so the rounding errors do not add up.
+	const toTick = (microsec) => Math.ceil(microsec * division / samplingTempo);
+	const events = [];
 	let microsec = 0;
 	for (const sysEx of sysExs) {
-		events.push({tick: Math.ceil(microsec / 1000), bytes: [0xf0, ...toVlq(sysEx.bytes.byteLength - 1), ...sysEx.bytes.subarray(1)]});
+		events.push({tick: toTick(microsec), bytes: [0xf0, ...toVlq(sysEx.bytes.byteLength - 1), ...sysEx.bytes.subarray(1)]});
 		microsec += Math.max(sysEx.bytes.byteLength * microsecPerMidiByte, settings.dumpInterval * 1000) + sysEx.wait * 1000;
 	}
-	events.push({tick: Math.ceil(microsec / 1000), bytes: [0xff, 0x2f, 0x00]});
-	return events;
+	const barNum = Math.ceil((microsec + settings.songWait * 1000) / (samplingTempo * beatsPerBar));
+	return {events, endTick: barNum * beatsPerBar * division};
 }
 
-// Puts the sampling data before the song. The song starts after the sampling data.
-function makeCombinedSmf(samplingEvents, song) {
-	const endTick = samplingEvents[samplingEvents.length - 1].tick;
+// Events at the start of the file: the port, and the tempo and the time signature of the sampling data.
+function makeHeadEvents() {
+	return [
+		{tick: 0, bytes: [0xff, 0x7f, 0x04, 0x43, 0x00, 0x01, 0x00]},	// Port A
+		{tick: 0, bytes: [0xff, 0x21, 0x01, 0x00]},
+		{tick: 0, bytes: makeTempoEvent(samplingTempo)},
+		{tick: 0, bytes: [0xff, 0x58, 0x04, beatsPerBar, 0x02, 0x18, 0x08]},
+	];
+}
+
+// Puts the sampling data before the song. The song starts at the bar after the sampling data.
+function makeCombinedSmf(sysExEvents, endTick, song) {
 	const tracks = song.tracks.map((track, i) => {
 		if (i === 0) {
-			const events = samplingEvents.slice(0, -1);
+			const events = [...makeHeadEvents(), ...sysExEvents];
 			if (!hasTempoAtStart(track)) {
-				events.push({tick: endTick, bytes: [0xff, 0x51, 0x03, 0x07, 0xa1, 0x20]});
+				events.push({tick: endTick, bytes: makeTempoEvent(defaultTempo)});
 			}
 			return concatBytes([makeTrack(events, false), delayTrack(track, endTick - events[events.length - 1].tick)]);
 		} else {
@@ -589,6 +605,14 @@ function makeSmf(format, division, tracks) {
 		new Uint8Array(header),
 		...tracks.map((e) => concatBytes([new Uint8Array([0x4d, 0x54, 0x72, 0x6b, ...toUint32Bytes(e.byteLength)]), e])),
 	]);
+}
+
+function makeMetaEvent(type, data) {
+	return [0xff, type, ...toVlq(data.length), ...data];
+}
+
+function makeTempoEvent(tempo) {
+	return makeMetaEvent(0x51, [(tempo >> 16) & 0xff, (tempo >> 8) & 0xff, tempo & 0xff]);
 }
 
 function toVlq(value) {

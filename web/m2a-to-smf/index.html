@@ -13,6 +13,7 @@ const elemDeviceNo     = document.getElementById('my-deviceNo');
 const elemIsInitSent   = document.getElementById('my-isInitSent');
 const elemInitWait     = document.getElementById('my-initWait');
 const elemDumpInterval = document.getElementById('my-dumpInterval');
+const elemSongWait     = document.getElementById('my-songWait');
 const elemResults      = document.getElementById('my-results');
 const elemLogs         = document.getElementById('my-logs');
 
@@ -20,6 +21,7 @@ elemDeviceNo.value     = defaultSettings.deviceNo;
 elemIsInitSent.checked = defaultSettings.isInitSent;
 elemInitWait.value     = defaultSettings.initWait;
 elemDumpInterval.value = defaultSettings.dumpInterval;
+elemSongWait.value     = defaultSettings.songWait;
 
 const objectUrls = [];
 
@@ -42,6 +44,7 @@ document.getElementById('my-convert').addEventListener('click', async () => {
 		isInitSent:   elemIsInitSent.checked,
 		initWait:     Number(elemInitWait.value),
 		dumpInterval: Number(elemDumpInterval.value),
+		songWait:     Number(elemSongWait.value),
 	};
 
 	try {
@@ -109,6 +112,10 @@ function addLog(message) {
 				<div class="col-sm-3">
 					<label for="my-dumpInterval" class="form-label">Interval of SysEx (ms)</label>
 					<input id="my-dumpInterval" type="number" class="form-control" min="0" max="1000">
+				</div>
+				<div class="col-sm-3">
+					<label for="my-songWait" class="form-label">Wait before the song (ms)</label>
+					<input id="my-songWait" type="number" class="form-control" min="0" max="60000">
 				</div>
 			</div>
 			<div class="form-check mb-3">
