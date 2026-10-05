@@ -31,9 +31,11 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 	if (!song) {
 		return {samplingSmf, songSmf: null, combinedSmf: null};
 	}
-	const combinedSmf = makeCombinedSmf(samplingEvents, song);
+	const tracks = song.tracks.map((e) => addMidiPortEvents(e));
+	const songSmf = makeSmf(song.format, song.division, tracks);
+	const combinedSmf = makeCombinedSmf(samplingEvents, {...song, tracks});
 
-	return {samplingSmf, songSmf: m2a.songBytes, combinedSmf};
+	return {samplingSmf, songSmf, combinedSmf};
 }
 
 function parseM2a(bytes, logs) {
@@ -437,6 +439,7 @@ function makeSamplingEvents(sysExs, division, settings) {
 	const tempo = division * 1000;
 	const events = [
 		{tick: 0, bytes: [0xff, 0x7f, 0x04, 0x43, 0x00, 0x01, 0x00]},	// Port A
+		{tick: 0, bytes: [0xff, 0x21, 0x01, 0x00]},
 		{tick: 0, bytes: [0xff, 0x51, 0x03, (tempo >> 16) & 0xff, (tempo >> 8) & 0xff, tempo & 0xff]},
 	];
 	let tick = 0;
@@ -492,6 +495,42 @@ function parseSmf(bytes, logs) {
 		return null;
 	}
 	return {format, division, tracks};
+}
+
+// Adds the MIDI Port meta event after each port meta event of Yamaha, because many players know only the former.
+function addMidiPortEvents(track) {
+	const parts = [];
+	let begin = 0;
+	let status = 0;
+	for (let pos = 0; pos < track.byteLength;) {
+		const [, deltaLen] = fromVlq(track, pos);
+		pos += deltaLen;
+		if (track[pos] === 0xff) {
+			const type = track[pos + 1];
+			const [len, lenLen] = fromVlq(track, pos + 2);
+			const dataPos = pos + 2 + lenLen;
+			pos = dataPos + len;
+			if (type === 0x21) {
+				return track;
+			}
+			if (type === 0x7f && len === 4 && track[dataPos] === 0x43 && track[dataPos + 1] === 0x00 && track[dataPos + 2] === 0x01) {
+				parts.push(track.subarray(begin, pos), new Uint8Array([0x00, 0xff, 0x21, 0x01, track[dataPos + 3]]));
+				begin = pos;
+			}
+		} else if (track[pos] === 0xf0 || track[pos] === 0xf7) {
+			const [len, lenLen] = fromVlq(track, pos + 1);
+			pos += 1 + lenLen + len;
+		} else {
+			// Channel message, maybe with running status.
+			if ((track[pos] & 0x80) !== 0) {
+				status = track[pos];
+				pos++;
+			}
+			pos += ([0xc0, 0xd0].includes(status & 0xf0)) ? 1 : 2;
+		}
+	}
+	parts.push(track.subarray(begin));
+	return concatBytes(parts);
 }
 
 function hasTempoAtStart(track) {
