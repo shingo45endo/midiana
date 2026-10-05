@@ -18,6 +18,10 @@ const maxWordNum = 0x100000;
 // The MU2000 has no range check for the sample number.
 const maxSampleNum = 512;
 
+// The song memory of the MU2000.
+const maxSongBlockNum = 1000;
+const songBlockSize = 252;
+
 // MIDI sends 3125 bytes per second.
 const microsecPerMidiByte = 320;
 
@@ -50,6 +54,10 @@ export function convertM2aToSmfs(bytes, settings = defaultSettings, logs = []) {
 		return {samplingSmf, songSmf: null, combinedSmf: null};
 	}
 	const tracks = song.tracks.map((e) => addMidiPortEvents(e));
+	const blockNum = tracks.reduce((p, e) => p + Math.ceil(e.byteLength / songBlockSize), 0);
+	if (blockNum > maxSongBlockNum) {
+		logs.push({message: `The song needs ${blockNum} blocks of the song memory of the MU2000 (max: ${maxSongBlockNum}). The MU2000 cannot play it.`});
+	}
 	const songSmf = makeSmf(song.format, song.division, tracks);
 	const combinedSmf = makeCombinedSmf(sysExEvents, endTick, {...song, tracks}, m2a);
 
