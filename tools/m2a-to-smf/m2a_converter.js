@@ -177,6 +177,9 @@ function makeSamplingSysExs(m2a, settings, logs) {
 	const sysExs = [];
 	const addBulkDump = (addr, data) => sysExs.push({bytes: makeBulkDump(deviceNo, addr, data), wait: 0});
 
+	// The sample transfer mode stops the MU2000 from sending the received data back to USB.
+	sysExs.push({bytes: makeParamChange(deviceNo, [0x00, 0x00, 0x78], [0x01]), wait: 0});
+
 	// Initializes all the sampling data.
 	if (settings.isInitSent) {
 		sysExs.push({bytes: makeParamChange(deviceNo, [0x00, 0x00, 0x7f], [0x00]), wait: settings.initWait});
@@ -239,6 +242,8 @@ function makeSamplingSysExs(m2a, settings, logs) {
 	for (const wave of waves.filter((e) => (!e.isSkipped && !sentSlots.has(e)))) {
 		setSlot(wave, makeDefaultSlot(wave));
 	}
+
+	sysExs.push({bytes: makeParamChange(deviceNo, [0x00, 0x00, 0x78], [0x00]), wait: 0});
 
 	return sysExs;
 
