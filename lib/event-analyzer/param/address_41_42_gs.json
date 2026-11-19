@@ -692,6 +692,8 @@
 		"23": {"name": "Part EFX Type", "size": 2, "type": "14bitBE", "format": "hex", "table": {"$ref": "#/tableEfxType"}},
 		"25": {"name": "Part EFX Macro"},
 		"26": {"name": "Part EFX Depth"},
+		"27": {"name": "Part EFX Control 1"},
+		"28": {"name": "Part EFX Control 2"},
 
 		"30": {"name": "User Inst Modify 1 Temp. (Vibrato Rate)", "format": "excess64"},
 		"31": {"name": "User Inst Modify 2 Temp. (Vibrato Depth)", "format": "excess64"},
